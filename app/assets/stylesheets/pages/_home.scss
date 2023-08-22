@@ -1,1 +1,38 @@
-// Specific CSS for your home-page
+.home
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.text-container {
+  flex: 1;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.find-boat-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: #888;
+  }
