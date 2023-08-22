@@ -1,13 +1,13 @@
 class CreateBoats < ActiveRecord::Migration[7.0]
   def change
     create_table :boats do |t|
-      t.integer :price
-      t.integer :rating
       t.string :name
-      t.string :description
+      t.text :description
       t.string :location
-      t.string :availability
-      t.integer :user_d
+      t.decimal :price
+      t.decimal :rating
+      t.boolean :availability
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
