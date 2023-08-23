@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+10.times do
+  Boat.create(
+    price: (200..1000).to_a.sample,
+    rating: (1..5).to_a.sample,
+    name: Faker::Name.name,
+    description: Faker::Quote.famous_last_words,
+    location: Faker::Nation.capital_city,
+    availability: Faker::Boolean.boolean
+  )
+end
