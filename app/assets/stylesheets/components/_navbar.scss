@@ -1,12 +1,40 @@
-.navbar-lewagon {
+.navbar-boatbnb {
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-boatbnb {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo {
+  height: 80px;
 }
+
+.nav-links ul li:hover {
+  color: rgb(7, 7, 7);
+}
+
+// .second-navbar {
+//   background: #F4F4F4;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   height: 80px;
+//   padding: 0px 50px;
+//   color: rgba(0,0,0,0.3);
+// }
+// .second-navbar-links {
+//   display: flex;
+//   align-items: center;
+// }
+// .second-navbar-links a {
+//   color: black;
+//   opacity: 0.15;
+//   text-decoration: none;
+//   font-size: 24px;
+//   padding: 0px 10px;
+// }
+// .second-navbar-links a:hover {
+//   opacity: 1;
+// }
