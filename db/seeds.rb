@@ -7,13 +7,23 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+user1 = User.create!(
+  email: "user1@gmail.com",
+  password: "123456",
+  username: "john doe"
+)
+
 10.times do
-  Boat.create(
+  boat = Boat.new(
     price: (200..1000).to_a.sample,
     rating: (1..5).to_a.sample,
     name: Faker::Name.name,
-    description: Faker::Quote.famous_last_words,
+    description: "Put Description Here",
     location: Faker::Nation.capital_city,
-    availability: Faker::Boolean.boolean
+    availability: Faker::Boolean.boolean,
+    user: user1
   )
+  boat.save!
+
+  puts "The boat with name #{boat.name} is made"
 end
