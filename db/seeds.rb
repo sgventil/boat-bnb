@@ -26,4 +26,5 @@ user1 = User.create!(
   boat.save!
 
   puts "The boat with name #{boat.name} is made"
+
 end
