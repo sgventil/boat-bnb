@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
   # will need to add authentication for all except :index. :show
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @boats = Boat.all
