@@ -1,4 +1,6 @@
 <h1>home page</h1>
+<br>
+<div class="container">
 <% @boats.each do |boat| %>
   <%= boat.name %>
   <%= boat.price %>
@@ -6,4 +8,6 @@
   <%= boat.description %>
   <%= boat.location %>
   <%= boat.availability %>
+  <br>
 <% end %>
+</div>
