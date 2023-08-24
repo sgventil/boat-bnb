@@ -25,9 +25,9 @@ class Users::OmniauthCallbacks::RegistrationsController < Devise::RegistrationsC
   # end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+   def destroy
+     super
+   end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
