@@ -5,6 +5,7 @@ ruby "3.1.2"
 gem "devise"
 
 gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
 
 gem 'faker'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
