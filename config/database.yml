@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: boat_bnb_production
-  username: boat_bnb
-  password: <%= ENV["BOAT_BNB_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
