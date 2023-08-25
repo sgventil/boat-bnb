@@ -7,7 +7,7 @@ class Users::OmniauthCallbacks::OmniauthCallbacksController < Devise::OmniauthCa
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
-      sign_in_and_redirect @user, event: :authentication
+      sign_in_and_redirect @user, event: :authentication, :event => :authentication, :location => "https://boatbnb-623630f4ace7.herokuapp.com/users/auth/facebook/callback"
       set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
