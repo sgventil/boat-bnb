@@ -15,7 +15,14 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7f2a251b225b4cab8e467b99ba32386f05e572269037a092df0bf9a935470a39d61344cb7838f00fccbd55f16625938693e2dd0138580217c281cbe26ce874c1'
-  config.omniauth :facebook, '235846058946077', '81f02f2dc56db9221d6c89da4ace075a', scope: 'email', info_fields: 'email,name', callback_url: 'http://boatbnb-623630f4ace7/users/auth/facebook/callback'
+  
+  if Rails.env.production?
+    callback_url = 'https://boatbnb-623630f4ace7.herokuapp.com/users/auth/facebook/callback'
+  else
+    callback_url = 'http://localhost:3000/users/auth/facebook/callback'
+  end
+
+  config.omniauth :facebook, '235846058946077', '81f02f2dc56db9221d6c89da4ace075a', scope: 'email', info_fields: 'email,name', callback_url: callback_url
   config.omniauth_path_prefix = "/users/auth"
   config.clean_up_csrf_token_on_authentication = true
   # ==> Controller configuration
@@ -308,7 +315,6 @@ Devise.setup do |config|
   config.responder.redirect_status = :see_other
 
   # ==> Configuration for :registerable
-
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
