@@ -1,1 +1,6 @@
-<h1>show page</h1>
+<h1> <%= "#{@booking.boat.name}" %></h1>
+
+<div>
+    <%= @booking.content %>
+    <p>from: <%= @booking.start_date %> to: <%= @booking.end_date %></p>
+</div>

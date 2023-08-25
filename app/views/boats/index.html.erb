@@ -2,6 +2,7 @@
 <br>
 <div class="container">
 <% @boats.each do |boat| %>
+  <% link_to boat_path(boat) %>
   <%= boat.name %>
   <%= boat.price %>
   <%= boat.rating %>
