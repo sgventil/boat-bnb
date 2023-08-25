@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create, :destroy]
   end
 
-  resources :boats, only: [:index, :show]
+  resources :boats, only: [:index, :show, :destroy]
 
   resources :booking, only: [:show, :destroy]
 end

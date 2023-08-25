@@ -1,3 +1,5 @@
 <h1>show page</h1>
 <h3><%= @boat.name %></h3>
 <p><%= @boat.description %></p>
+
+<%= button_to "Delete this boat", boat_path(@boat), method: :delete, data: { confirm: "Are you sure you want to delete this boat?" } %>
