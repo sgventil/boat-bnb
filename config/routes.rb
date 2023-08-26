@@ -13,19 +13,17 @@ Rails.application.routes.draw do
     member do
       get 'my_boats', to: 'boats#my_boats'
     end
-    resources :bookings, only: [:index]
   end
 
-  resources :boats, only: [:index, :show, :destroy, :new, :create] do
+  resources :boats do
     resources :bookings, only: [:new, :create]
     resources :reviews, only: [:index]
   end
 
-  resources :bookings do
+  resources :bookings, only: [:index, :show, :destroy, :edit, :update] do
     resources :reviews, only: [:new, :create]
   end
 
   resources :reviews, only: [:destroy]
 
-  resources :bookings, only: [:show, :destroy, :edit, :update]
 end

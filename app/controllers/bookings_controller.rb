@@ -1,8 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
-    @booking = Booking.find(params[:user_id])
-    @booking.boat = @boat
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
@@ -23,22 +21,26 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to user_bookings_path(@booking.user)
+      redirect_to bookings_path
     else
       render :new
     end
   end
 
   def edit
-
+    @booking = Booking.find(params[:id])
   end
 
   def update
-
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to bookings_path
   end
 
   def destroy
-
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
@@ -46,7 +48,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:content, :start_date, :end_date)
   end
-
-
 
 end
