@@ -2,11 +2,15 @@
   <h1>show page</h1>
 </div>
 <div class="container-fluid">
-  <div class="row row-cols-1 row-cols-md-3 g-2">
+  <div class="row row-cols-1 row-cols-md-3 g-2 justify-content-center">
     <a href="<%= boat_path(@boat) %>" class="text-decoration-none">
       <%= render partial: "shared/boatcard", locals: { boat: @boat } %>
     </a>
   </div>
 </div>
 
-<%= button_to "Delete this boat", boat_path(@boat), method: :delete, data: { confirm: "Are you sure you want to delete this boat?" } %>
+<div class="d-flex justify-content-center gap-4">
+  <%= button_to "Delete this boat", boat_path(@boat), method: :delete, data: { confirm: "Are you sure you want to delete this boat?" }, class: "btn btn-danger" %>
+  <%= link_to "Edit this boat", edit_boat_path(@boat), class: "btn btn-primary" %>
+  <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+</div>
