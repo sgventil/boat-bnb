@@ -16,15 +16,16 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index]
   end
 
-  resources :boats do
+  resources :boats, only: [:index, :show, :destroy, :new, :create] do
     resources :bookings, only: [:new, :create]
+    resources :reviews, only: [:index]
   end
 
   resources :bookings do
-    resources :reviews, only: [:new, :create, :destroy]
+    resources :reviews, only: [:new, :create]
   end
 
-  resources :boats, only: [:index, :show, :destroy]
+  resources :reviews, only: [:destroy]
 
-  resources :booking, only: [:show, :destroy]
+  resources :bookings, only: [:show, :destroy, :edit, :update]
 end
