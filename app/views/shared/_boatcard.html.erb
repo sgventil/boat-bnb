@@ -1,10 +1,9 @@
 <div class="card mb-3">
-  <%= cl_image_tag("epvsstrkfal3jk9t55op",
-      width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("ta6h0rfkdcx6zuimh6yw",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+  <% if boat.photo.attached? %>
+    <%= cl_image_tag boat.photo.key %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= boat.name %></h5>
     <p class="card-text">Location: <%= boat.location %></p>
