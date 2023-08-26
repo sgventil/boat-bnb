@@ -9,12 +9,13 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  # /boats/:boat_id/bookings
   def new
     @booking = Booking.new
-    @user = current_user
     @boat = Boat.find(params[:boat_id])
   end
 
+  # /boats/:boat_id/bookings
   def create
     @booking = Booking.new(booking_params)
     @boat = Boat.find(params[:boat_id])
