@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :users do
+    member do
+      get 'my_boats', to: 'boats#my_boats'
+    end
     resources :bookings, only: [:index]
   end
 

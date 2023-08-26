@@ -1,1 +1,19 @@
-<h1>new page</h1>
+<div class="container text-center">
+  <h1>Create a New Listing</h1>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <%= simple_form_for @boat, { class: "form-horizontal" } do |f| %>
+        <%= f.input :name, label: "Name", required: true, class: "form-control" %>
+        <%= f.input :price, label: "Price", required: true, class: "form-control" %>
+        <%= f.input :description, label: "Description", required: true, class: "form-control" %>
+        <%= f.input :location, label: "Location", required: true, class: "form-control" %>
+        <div class="form-group">
+          <%= f.submit "Create Boat", class: "btn btn-primary" %>
+          <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
