@@ -9,6 +9,7 @@
         <%= f.input :price, label: "Price", required: true, class: "form-control" %>
         <%= f.input :description, label: "Description", required: true, class: "form-control" %>
         <%= f.input :location, label: "Location", required: true, class: "form-control" %>
+        <%= f.input :photo, as: :file %>
         <div class="form-group">
           <%= f.submit "Create Boat", class: "btn btn-primary" %>
           <%= link_to "Home", root_path, class: "btn btn-secondary" %>
