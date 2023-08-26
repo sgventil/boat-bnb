@@ -1,12 +1,11 @@
 <div class="container text-center">
-  <h1>Boats</h1>
+  <h1>My Listed Boats</h1>
 </div>
-
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-3 g-2">
+<div class="container-fluid">
+  <div class="row">
     <% @boats.each do |boat| %>
-      <div class="col mb-2">
-        <a href="<%= boat_path(boat) %>", class=" text-decoration-none">
+      <div class="row row-cols-1 row-cols-md-3 g-2">
+        <a href="<%= boat_path(boat) %>" class="text-decoration-none">
           <%= render partial: "shared/boatcard", locals: { boat: boat } %>
         </a>
       </div>

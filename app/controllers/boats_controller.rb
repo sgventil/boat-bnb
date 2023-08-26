@@ -10,14 +10,20 @@ class BoatsController < ApplicationController
     @boat = Boat.find(params[:id])
   end
 
+  def my_boats
+    @user = User.find(params[:id])
+    @boats = @user.boats
+  end
+
   def new
     @boat = Boat.new
   end
 
   def create
     @boat = Boat.new(boat_params)
+    @boat.user = current_user
     if @boat.save
-      redirect_to boats_path(@boat)
+      redirect_to boat_path(@boat)
     else
       render :new
     end
@@ -28,17 +34,13 @@ class BoatsController < ApplicationController
   end
 
   def update
-    @boat = Boat.find(paams[:id])
+    @boat = Boat.find(params[:id])
     @boat.update(boat_params)
+    redirect_to boat_path
   end
 
   def destroy
     @boat = Boat.find(params[:id])
-
-    if @boat.bookings.any?
-      @boat.bookings.destroy_all
-    end
-
     @boat.destroy
     redirect_to boats_path
   end
