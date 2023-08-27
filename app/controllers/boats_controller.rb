@@ -13,6 +13,7 @@ class BoatsController < ApplicationController
   def my_boats
     @user = User.find(params[:id])
     @boats = @user.boats
+    authorize @boats
   end
 
   def new
@@ -44,6 +45,7 @@ class BoatsController < ApplicationController
   def destroy
     authorize @boat
     @boat.destroy
+
     redirect_to boats_path
   end
 
