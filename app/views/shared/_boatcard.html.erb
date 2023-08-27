@@ -1,5 +1,9 @@
 <div class="card mb-3">
-  <%#=image_tag boat.image.url, class: "card-img-top", alt: boat.name%>
+  <% if boat.photo.attached? %>
+    <%= cl_image_tag boat.photo.key %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= boat.name %></h5>
     <p class="card-text">Location: <%= boat.location %></p>
