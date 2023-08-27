@@ -15,7 +15,10 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7f2a251b225b4cab8e467b99ba32386f05e572269037a092df0bf9a935470a39d61344cb7838f00fccbd55f16625938693e2dd0138580217c281cbe26ce874c1'
+<<<<<<< Updated upstream
   
+=======
+>>>>>>> Stashed changes
   if Rails.env.production?
     callback_url = 'https://boatbnb-623630f4ace7.herokuapp.com/users/auth/facebook/callback'
   else
