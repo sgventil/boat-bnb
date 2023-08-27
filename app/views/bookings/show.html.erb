@@ -5,5 +5,10 @@
     <p>from: <%= @booking.start_date %> to: <%= @booking.end_date %></p>
 </div>
 
-<%= link_to "Edit", edit_booking_path(@booking) %>
-<%= link_to "Delete", booking_path(@booking), method: :delete, data: { confirm: "Are you sure you want to delete this booking?" } %>
+<% if policy(@booking).edit? %>
+ <%= link_to "Edit", edit_booking_path(@booking) %>
+<% end %>
+
+<% if policy(@booking).destroy? %>
+  <%= button_to "Delete", booking_path(@booking), method: :delete, data: { confirm: "Are you sure you want to delete this booking?" } %>
+<% end %>

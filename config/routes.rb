@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get 'my_boats', to: 'boats#my_boats'
+      get 'my_bookings', to: 'bookings#my_bookings'
     end
   end
 
