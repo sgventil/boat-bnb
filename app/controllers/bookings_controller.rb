@@ -31,6 +31,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
+      BookingNotificationMailer.booking_notification(@booking).deliver_now
       redirect_to bookings_path
     else
       render :new
