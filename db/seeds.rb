@@ -48,6 +48,11 @@ user1 = User.create!(
   username: "john doe"
 )
 
+user2 = User.create!(
+  email: "user2@gmail.com",
+  password: "123456",
+  username: "jane doe"
+)
 10.times do
   boat = Boat.new(
     price: (200..1000).to_a.sample,
