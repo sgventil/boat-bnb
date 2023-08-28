@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     authorize @review
 
     if @review.save
-      redirect_to boats_path(@review.boat)
+      redirect_to boat_path(@review.boat)
     else
       render :new
     end
