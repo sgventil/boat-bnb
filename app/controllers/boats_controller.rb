@@ -67,7 +67,7 @@ class BoatsController < ApplicationController
 
   def apply_search_filters(boats, params)
     boats = boats.search_by_city(params[:search]) if params[:search].present?
-    boats = boats.where(location: params[:location]) if params[:location].present?
+    boats = boats.where(location: params[:location].capitalize) if params[:location].present?
     boats = boats.where(availability: true) if params[:availability].present?
     boats
   end
