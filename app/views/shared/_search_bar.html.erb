@@ -1,0 +1,13 @@
+<%= form_tag(boats_path, method: "get", class: "search-bar") do %>
+  <%= text_field_tag(:location, params[:location], placeholder: "Search city", class: "location-input") %>
+
+
+  <%= label_tag(:checkin_date, "Check In Date:") %>
+  <%= text_field_tag(:checkin_date, params[:checkin_date], class: "date-input", type: "date") %>
+
+
+  <%= label_tag(:checkout_date, "Check Out Date:") %>
+  <%= text_field_tag(:checkout_date, params[:checkout_date], class: "date-input", type: "date") %>
+
+  <%= submit_tag("Search", class: "search-button") %>
+<% end %>
