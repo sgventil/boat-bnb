@@ -17,9 +17,12 @@
 
   <div class="bottom-section">
     <div class="container text-center">
-      <h1>Boats in <%= params[:location] %></h1>
-    </div>
-
+     <% if params[:location].present? %>
+  <h1>Boats in <%= params[:location].capitalize %></h1>
+<% else %>
+  <h1>Boats</h1>
+<% end %>
+</div>
     <div class="container">
       <div class="row row-cols-1 row-cols-md-3 g-2">
         <% @boats.each do |boat| %>
