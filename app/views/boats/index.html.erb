@@ -28,7 +28,22 @@
         <% @boats.each do |boat| %>
           <div class="col mb-2">
             <a href="<%= boat_path(boat) %>", class=" text-decoration-none">
-              <%= render partial: "shared/boatcard", locals: { boat: boat } %>
+            <div class="card mb-3">
+                <div class="d-flex justify-content-center align-items-center">
+                  <% if boat.image_filepath.present? %>
+                    <%= image_tag boat.image_filepath, alt: boat.name, class: "img-fluid boat-image" %>
+                  <% elsif boat.photo.attached? %>
+                    <%= cl_image_tag boat.photo.key, class: "img-fluid boat-image" %>
+                  <% else %>
+                    <p class="text-center">No photo available</p>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><%= boat.name %></h5>
+                  <p class="card-text">Location: <%= boat.location %></p>
+                  <p class="card-text">Price: <%= boat.price %></p>
+                </div>
+              </div>
             </a>
           </div>
         <% end %>

@@ -50,9 +50,10 @@ class BoatsController < ApplicationController
 
   def destroy
     authorize @boat
+    @boat.user = current_user
     @boat.destroy
 
-    redirect_to boats_path
+    redirect_to my_boats_user_path(@boat.user)
   end
 
   private
