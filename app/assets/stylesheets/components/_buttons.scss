@@ -1,8 +1,21 @@
 .submit-btn {
+  background-color: #a9bdcd;
+  color: #EFEFEF;
+  border: none;
+}
 
+.submit-btn:hover {
+  color: #EFEFEF;;
+  background-color: #96a8b7;
 }
 
 .show-btn {
   text-decoration: none;
-  color: $button;
+  border: none;
+  color: #a9bdcd;
+  background-color: transparent;
+}
+
+.show-btn:hover {
+  color: #6e8996;
 }
