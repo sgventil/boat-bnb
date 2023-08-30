@@ -1,0 +1,22 @@
+<h1>Submit a Review for <%= @booking.boat.name %></h1>
+
+<div class="container">
+<%# /bookings/:booking_id/reviews %>
+  <%# raise %>
+  <%= simple_form_for [@booking, @review], method: :post, class: "form-horizontal" do |f| %>
+    <div class="form-group">
+      <p>Comment</p>
+      <% f.label :comment %>
+      <%= f.text_area :comment, class: 'form-control' %>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <% f.label :rating %>
+      <%= f.input :rating, as: :integer, class: 'form-control' %>
+    </div>
+
+    <%= f.button :submit, class: 'btn submit-btn' %>
+  <% end %>
+
+</div>
