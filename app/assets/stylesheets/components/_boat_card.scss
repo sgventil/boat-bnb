@@ -13,15 +13,28 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   box-sizing: border-box;
-  margin: 0 10px;
+  margin: 0 20px;
+  height: 400px; /* Don't forget the semicolon */
 
-  img {
-    width: 100%;
-    height: auto;
+  .boat-image {
+    max-height: 70%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
-  .card-content {
-    padding: 20px;
+  .card-body {
+    max-height: 30%;
+    padding-top: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h2 {
       color: $headers-color;
