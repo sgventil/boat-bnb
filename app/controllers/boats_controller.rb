@@ -4,12 +4,21 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: %i[ show edit update destroy ]
   def index
     @boats = policy_scope(Boat).all
+
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
+
     @locations = Boat.pluck(:location).uniq
     @boats = apply_search_filters(@boats, params)
 
     return unless params[:location].present?
 
     @boats = @boats.where("location ILIKE ?", "%#{params[:location]}%")
+
   end
 
   def show

@@ -9,7 +9,8 @@ gem "pundit"
 gem 'omniauth-facebook'
 
 gem 'omniauth-rails_csrf_protection'
-
+gem 'mapbox-gl-rails'
+gem 'geocoder'
 gem "dotenv-rails", groups: [:development, :test]
 
 gem "cloudinary"
