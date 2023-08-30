@@ -1,21 +1,31 @@
-<div class="container">
-  <%# /boats/:boat_id/bookings %>
-  <%= simple_form_for [@boat, @booking], html: { class: 'form' } do |f| %>
-    <div class="form-group">
-      <% f.label :content %>
-      <%= f.text_area :content, class: 'form-control' %>
+<div class="container1" style="background-image: url('https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+  <div class="header-form">
+    <div class="container">
+      <h2><strong>Get your vacation started now...</strong></h4>
     </div>
+      <div class="container2">
+        <div class="form-container">
+          <%= simple_form_for [@boat, @booking], html: { class: 'form' } do |f| %>
+            <div class="form-group">
+              <%= f.label :content %>
+              <%= f.text_area :content, class: 'form-control' %>
+            </div>
 
-    <div class="form-group">
-      <% f.label :start_date %>
-      <%= f.input :start_date, as: :date, class: 'form-control' %>
+            <div class="form-group">
+              <% f.label :start_date %>
+              <%= f.input :start_date, as: :date, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <% f.label :end_date %>
+              <%= f.input :end_date, as: :date, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.button :submit, class: 'btn submit-btn' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-
-    <div class="form-group">
-      <% f.label :end_date %>
-      <%= f.input :end_date, as: :date, class: 'form-control' %>
-    </div>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
-
 </div>

@@ -1,17 +1,30 @@
-<h1 class="text-center mt-4">All Your Bookings</h1>
-<div class="container">
-
-    <% @bookings.each do |booking| %>
-      <a href="<%= booking_path(booking.id) %>" class="text-decoration-none text-dark">
-        <div class="card mt-4">
-          <div class="card-header"><h5><%= booking.boat.name %></h5></div>
-          <div class="card-body">
-            <p><%= booking.content %></p>
-            <p><strong>Start Date:</strong> <%= booking.start_date %></p>
-            <p><strong>End Date:</strong> <%= booking.end_date %></p>
+<div class="my-5">
+  <div class="p-3 text-center bg-body-tertiary">
+    <div class="container py-2">
+      <h1 class="text-body-emphasis">All your bookings</h1>
+      <p class="col-lg-8 mx-auto lead">
+        <% @bookings.each do |booking| %>
+          <div class="text-dark">
+            <div class="card mt-4">
+              <div class="card-header"><h5>Boat name - <%= booking.boat.name %></h5></div>
+              <div class="card-body">
+                <p><%= booking.content %></p>
+                <p>Check in date -  <%= booking.start_date %></p>
+                <p>Check out date - <%= booking.end_date %></p>
+                <div class="d-flex justify-content-center align-items-center">
+    <% if booking.boat.image_filepath.present? %>
+        <%= image_tag booking.boat.image_filepath, alt: booking.boat.name, class: "boat-image-thumbnail" %>
+      <% elsif boat.photo.attached? %>
+        <%= cl_image_tag boat.photo.key, class: "boat-image-thumbnail" %>
+      <% else %>
+        <p class="text-center">No photo available</p>
+      <% end %>
+                <a href="<%= booking_path(booking.id) %>" class="btn submit-btn rounded">Click here for more options</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </a>
-    <% end %>
-
+        <% end %>
+      </p>
+    </div>
+  </div>
 </div>

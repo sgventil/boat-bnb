@@ -1,0 +1,13 @@
+<% if reviews.any? %>
+  <ul class="list-group">
+    <% reviews.each do |review| %>
+      <li class="list-group-item">
+        <h5>Rating: <%= review.rating %></h5>
+        <p><%= review.comment %></p>
+        <!-- Display other review information if needed -->
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews available.</p>
+<% end %>

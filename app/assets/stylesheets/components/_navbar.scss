@@ -8,13 +8,27 @@
 }
 
 .logo {
-  height: 80px;
+  height: 70px;
+  color: $logo;
+  padding-top: 25px;
 }
 
-.nav-links ul li:hover {
-  color: rgb(7, 7, 7);
+.logo-hover:hover {
+  color: #7a99a7;
 }
 
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: black;
+  opacity: 1;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 0px 10px;
+}
+.nav-link :hover {
+  opacity: 0.15;
+}
 // .second-navbar {
 //   background: #F4F4F4;
 //   display: flex;

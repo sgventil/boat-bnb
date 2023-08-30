@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
 ActiveRecord::Schema[7.0].define(version: 2023_08_28_201738) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_172627) do
->>>>>>> Stashed changes
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_172627) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "image_filepath"
     t.index ["user_id"], name: "index_boats_on_user_id"
   end
 
@@ -71,6 +68,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_172627) do
     t.date "end_date"
     t.index ["boat_id"], name: "index_bookings_on_boat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|

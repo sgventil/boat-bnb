@@ -20,22 +20,35 @@
     height: auto;
   }
 
+  .boat-image-thumbnail {
+    width: 250px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    border-radius: 10%;
+  }
   .card-content {
     padding: 20px;
 
     h2 {
+      color: $headers-color;
+      font-family: $headers-font;
       font-size: 1.5rem;
       margin: 0;
     }
 
     p {
+      font-family: $body-font;
+      color: $body-color;
       font-size: 1rem;
       margin: 10px 0;
     }
 
     .price {
       font-size: 1.2rem;
-      color: #007bff;
+      font-family: $body-font;
+      color: $body-color;
       margin-bottom: 10px;
     }
 

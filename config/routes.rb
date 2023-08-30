@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
+  root to: "boats#index"
   devise_for :users, controllers: {
      sessions: 'users/omniauth_callbacks/sessions',
      omniauth_callbacks: 'users/omniauth_callbacks/omniauth_callbacks'
@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
 
   resources :users do
     member do
@@ -26,5 +25,4 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: [:destroy]
-
 end

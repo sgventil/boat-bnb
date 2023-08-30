@@ -4,12 +4,21 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: %i[ show edit update destroy ]
   def index
     @boats = policy_scope(Boat).all
+
     @markers = @boats.geocoded.map do |boat|
       {
         lat: boat.latitude,
         lng: boat.longitude
       }
     end
+
+    @locations = Boat.pluck(:location).uniq
+    @boats = apply_search_filters(@boats, params)
+
+    return unless params[:location].present?
+
+    @boats = @boats.where("location ILIKE ?", "%#{params[:location]}%")
+
   end
 
   def show
@@ -50,9 +59,10 @@ class BoatsController < ApplicationController
 
   def destroy
     authorize @boat
+    @boat.user = current_user
     @boat.destroy
 
-    redirect_to boats_path
+    redirect_to my_boats_user_path(@boat.user)
   end
 
   private
@@ -63,5 +73,12 @@ class BoatsController < ApplicationController
 
   def boat_params
     params.require(:boat).permit(:name, :price, :description, :location, :photo)
+  end
+
+  def apply_search_filters(boats, params)
+    boats = boats.search_by_city(params[:search]) if params[:search].present?
+    boats = boats.where(location: params[:location].capitalize) if params[:location].present?
+    boats = boats.where(availability: true) if params[:availability].present?
+    boats
   end
 end
