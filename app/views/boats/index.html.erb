@@ -13,57 +13,30 @@
       </div>
     </div>
   </div>
-
-
-  <div class="bottom-section">
+   <div class="bottom-section mb-4">
     <div class="container text-center">
-     <% if params[:location].present? %>
-  <h1>Boats in <%= params[:location].capitalize %></h1>
-<% else %>
-  <h1>Boats</h1>
-<% end %>
-</div>
+      <% if params[:location].present? %>
+        <h1>Boats in <%= params[:location].capitalize %></h1>
+      <% else %>
+        <h1>Boats</h1>
+      <% end %>
+    </div>
     <div class="container">
-      <div class="row row-cols-1 row-cols-md-3 g-2">
-        <% @boats.each do |boat| %>
-          <div class="col mb-2">
-            <a href="<%= boat_path(boat) %>", class=" text-decoration-none">
-            <div class="card mb-3">
-                <div class="d-flex justify-content-center align-items-center">
-                  <% if boat.image_filepath.present? %>
-                    <%= image_tag boat.image_filepath, alt: boat.name, class: "img-fluid boat-image" %>
-                  <% elsif boat.photo.attached? %>
-                    <%= cl_image_tag boat.photo.key, class: "img-fluid boat-image" %>
-                  <% else %>
-                    <p class="text-center">No photo available</p>
-                  <% end %>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title"><%= boat.name %></h5>
-                  <p class="card-text">Location: <%= boat.location %></p>
-                  <p class="card-text">Price: <%= boat.price %></p>
-                </div>
-              </div>
-            </a>
-          </div>
+      <div class="row text-center">
+        <% if @boats.empty? %>
+          <p>Sorry, no boats match your search criteria.</p>
+        <% else %>
+        <div class="row text-center row-cols-3">
+          <% @boats.each do |boat| %>
+            <div class="col mb-2">
+              <a href="<%= boat_path(boat) %>" class="text-decoration-none">
+                <%= render partial: "shared/boatcard", locals: { boat: boat } %>
+              </a>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
-
-<div class="container">
-  <% if @boats.empty? %>
-    <p class="text-center text-danger mt-3">Sorry, no boats match your search criteria.</p>
-  <% else %>
-    <div class="row row-cols-1 row-cols-md-3 g-2">
-      <% @boats.each do |boat| %>
-        <div class="col mb-2">
-          <a href="<%= boat_path(boat) %>" class="text-decoration-none">
-            <%= render partial: "shared/boatcard", locals: { boat: boat } %>
-          </a>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-
+  <div style="margin-bottom: 100px;"></div>
 </div>
