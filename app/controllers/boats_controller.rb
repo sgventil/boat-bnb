@@ -4,6 +4,12 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: %i[ show edit update destroy ]
   def index
     @boats = policy_scope(Boat).all
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
   end
 
   def show

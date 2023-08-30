@@ -125,6 +125,7 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
+    geocoder (1.8.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
@@ -150,6 +151,8 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mapbox-gl-rails (2.9.0)
+      railties (>= 3.2)
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -320,8 +323,10 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass (~> 6.1)
+  geocoder
   jbuilder
   jsbundling-rails
+  mapbox-gl-rails
   omniauth-facebook
   omniauth-rails_csrf_protection
   pg (~> 1.1)
