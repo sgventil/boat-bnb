@@ -3,9 +3,9 @@
     <div class="card-body">
       <h1 class="card-title"><%= @booking.boat.name %></h1>
       <%= @booking.content %>
-      <div class="d-flex">
-        <p class="mr-3">Check in: <%= @booking.start_date%></p>
-        <p>Check out: <%= @booking.end_date%></p>
+     <div class="d-flex flex-column">
+        <p class="mb-0">Check in: <%= @booking.start_date %></p>
+        <p class="mb-0">Check out: <%= @booking.end_date %></p>
       </div>
       <div class="d-flex justify-content-start mt-3">
         <% if policy(@booking).edit? %>
@@ -27,4 +27,5 @@
     </div>
     </div>
   </div>
+  <div style="margin-bottom: 100px;"></div>
 </div>
