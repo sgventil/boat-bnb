@@ -5,9 +5,7 @@
       <% @bookings.each do |booking| %>
         <div class="card <%= booking.start_date >= Date.today ? 'future-booking' : 'past-booking' %>">
           <h2><%= booking.boat.name %></h2>
-          <% if booking.boat.image_filepath.present? %>
-            <%= image_tag booking.boat.image_filepath, alt: booking.boat.name, class: "boat-image-thumbnail" %>
-          <% elsif booking.boat.photo.attached? %>
+          <% if booking.boat.photo.attached? %>
             <%= cl_image_tag booking.boat.photo.key, class: "boat-image-thumbnail" %>
           <% else %>
             <p class="text-center">No photo available</p>
