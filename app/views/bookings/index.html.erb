@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <h1 class="text-body-emphasis">All your bookings</h1>
-
       <% @bookings.each do |booking| %>
         <div class="card <%= booking.start_date >= Date.today ? 'future-booking' : 'past-booking' %>">
           <h2><%= booking.boat.name %></h2>

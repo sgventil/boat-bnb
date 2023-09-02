@@ -1,9 +1,7 @@
 <div class="card mb-3">
   <div class="d-flex justify-content-center align-items-center">
-    <% if boat.image_filepath.present? %>
-      <%= image_tag boat.image_filepath, alt: boat.name, class: "img-fluid boat-image" %>
-    <% elsif boat.photo.attached? %>
-      <%= cl_image_tag boat.photo.key, class: "img-fluid boat-image" %>
+    <% if boat.photo.attached? %>
+      <%= cl_image_tag boat.photo.key, transformation: { width: 300, height: 200, crop: :fill }, class: "img-fluid boat-image" %>
     <% else %>
       <p class="text-center">No photo available</p>
     <% end %>
