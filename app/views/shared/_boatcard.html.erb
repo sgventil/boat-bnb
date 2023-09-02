@@ -1,14 +1,16 @@
-<div class="card mb-3">
-  <div class="d-flex justify-content-center align-items-center">
+<div class="card h-100 border-0 shadow-none">
+  <div class="rounded-img">
     <% if boat.photo.attached? %>
-      <%= cl_image_tag boat.photo.key, transformation: { width: 300, height: 200, crop: :fill }, class: "img-fluid boat-image" %>
+      <%= cl_image_tag boat.photo.key, transformation: { width: 300, height: 250, crop: :fill }, class: "img-fluid boat-image" %>
     <% else %>
-      <p class="text-center">No photo available</p>
+      <p>No photo available</p>
     <% end %>
   </div>
   <div class="card-body">
-    <h5 class="card-title"><%= boat.name %></h5>
-    <p class="card-text">Location: <%= boat.location %></p>
-    <p class="card-text">Price: <%= boat.price %></p>
+    <p class="card-title"><%= boat.name %></p>
+    <div class="d-flex justify-content-between">
+      <p class="card-text"><%= boat.location %></p>
+      <p class="card-text price-text">$<%= boat.price.to_i %>/day</p>
+    </div>
   </div>
 </div>
