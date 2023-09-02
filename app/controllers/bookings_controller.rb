@@ -2,6 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[ show edit update destroy ]
   def index
     @bookings = policy_scope(Booking).all
+    @future_bookings = Booking.where('start_date >= ?', Date.today).order(start_date: :asc)
+    @past_bookings = Booking.where('start_date < ?', Date.today).order(start_date: :asc)
+
+    @bookings = @future_bookings + @past_bookings
   end
 
   def show
