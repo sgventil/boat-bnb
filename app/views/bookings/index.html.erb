@@ -14,7 +14,7 @@
                 <div class="d-flex justify-content-center align-items-center">
     <% if booking.boat.image_filepath.present? %>
         <%= image_tag booking.boat.image_filepath, alt: booking.boat.name, class: "boat-image-thumbnail" %>
-      <%# <% elsif boat.photo.attached? %>
+      <% elsif boat.photo.attached? %>
         <%= cl_image_tag boat.photo.key, class: "boat-image-thumbnail" %>
       <% else %>
         <p class="text-center">No photo available</p>
