@@ -1,22 +1,29 @@
-<h1>Submit a Review for <%= @booking.boat.name %></h1>
+<div class="container1" style="background-image: url('https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80')">
 
-<div class="container">
-<%# /bookings/:booking_id/reviews %>
-  <%# raise %>
-  <%= simple_form_for [@booking, @review], method: :post, class: "form-horizontal" do |f| %>
-    <div class="form-group">
-      <p>Comment</p>
-      <% f.label :comment %>
-      <%= f.text_area :comment, class: 'form-control' %>
-    </div>
-    <br>
+  <div class="container">
+    <h2>Submit a Review for <%= @booking.boat.name %></h2>
+  </div>
 
-    <div class="form-group">
-      <% f.label :rating %>
-      <%= f.input :rating, as: :integer, class: 'form-control' %>
-    </div>
+  <div class="container3">
+        <div class="form-container" class="form-group">
+          <%= simple_form_for [@booking, @review], method: :post, class: "form-horizontal" do |f| %>
+            <div class="form-group">
+              <p>Comment</p>
+              <% f.label :comment %>
+              <%= f.text_area :comment, class: 'form-control' %>
+            </div>
+            <br>
 
-    <%= f.button :submit, class: 'btn submit-btn' %>
-  <% end %>
+            <div class="form-group">
+              <% f.label :rating %>
+              <%= f.input :rating, as: :integer, class: 'form-control' %>
+            </div>
 
+            <div class="form-group">
+              <%= f.button :submit, class: 'btn submit-btn' %>
+            </div>
+          <% end %>
+        </div>
+    <div>
+  </div>
 </div>
