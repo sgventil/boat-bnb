@@ -4,9 +4,18 @@ import flatpickr from "flatpickr";
 
 export default class extends Controller {
   connect() {
-    flatpickr(".date-input", {
+    const dateInputs = document.querySelectorAll(".date-input");
+
+    const options = {
       dateFormat: "d-m-Y",
       defaultDate: "today",
-    });
+      onClose: function (selectedDates, dateStr, instance) {
+        if (instance.input === dateInputs[0]) {
+          dateInputs[1].focus();
+        }
+      },
+    };
+
+    flatpickr(dateInputs, options);
   }
 }
