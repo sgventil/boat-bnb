@@ -22,6 +22,12 @@ class BoatsController < ApplicationController
 
   def show
     authorize @boat
+    @markers = @boat.geocode.map {
+      {
+        lat: @boat.latitude,
+        lng: @boat.longitude
+      }
+    }
   end
 
   def my_boats
@@ -80,5 +86,4 @@ class BoatsController < ApplicationController
     boats = boats.where(availability: true) if params[:availability].present?
     boats
   end
-
 end
