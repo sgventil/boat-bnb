@@ -1,13 +1,12 @@
-<div class="container mt-4">
-  <div class="card mt-3">
-    <div class="card-body">
-      <h1 class="card-title"><%= @booking.boat.name %></h1>
-      <%= @booking.content %>
-     <div class="d-flex flex-column">
-        <p class="mb-0">Check in: <%= @booking.start_date %></p>
-        <p class="mb-0">Check out: <%= @booking.end_date %></p>
+<div class="d-flex justify-content-center align-items-center flex-column">
+<div class="card mt-4 p-4 shadow">
+      <h1 class="card-title text-center"><%= @booking.boat.name %></h1>
+      <p class="card-text"><%= @booking.content %></p>
+      <div class="d-flex justify-content-center flex-column">
+        <p class="mb-0">Check-in: <%= @booking.start_date.strftime("%B %e, %Y") %></p>
+        <p class="mb-0">Check-out: <%= @booking.end_date.strftime("%B %e, %Y") %></p>
       </div>
-      <div class="d-flex justify-content-start mt-3">
+      <div class="d-flex justify-content-center mt-3">
         <% if policy(@booking).edit? %>
           <%= link_to "Edit", edit_booking_path(@booking), class: "btn btn-show mr-2" %>
         <% end %>
@@ -16,16 +15,14 @@
         <% end %>
         <%= link_to "Add Review", new_booking_review_path(@booking), class: "btn btn-show ml-auto" %>
       </div>
-       <div class="small-image-container">
-      <% if @boat.image_filepath.present? %>
-        <%= image_tag @boat.image_filepath, alt: @boat.name, class: "img-fluid small-boat-image" %>
-      <% elsif @boat.photo.attached? %>
-        <%= cl_image_tag @boat.photo.key, class: "img-fluid small-boat-image" %>
-      <% else %>
-        <p class="text-center">No photo available</p>
-      <% end %>
+      <div class="card h-100 border-0 shadow-none">
+       <div class="rounded-img text-center mt-4">
+      <% if @boat.photo.attached? %>
+      <%= cl_image_tag @boat.photo.key, transformation: { width: 300, height: 250, crop: :fill }, class: "img-fluid boat-image" %>
+    <% else %>
+      <p>No photo available</p>
+    <% end %>
+  </div>
     </div>
     </div>
   </div>
-  <div style="margin-bottom: 100px;"></div>
-</div>
