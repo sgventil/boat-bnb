@@ -54,7 +54,7 @@ cloudinary_public_ids = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "
 
   public_id_with_extension = cloudinary_public_ids[n]
 
-  image_url = "https://res.cloudinary.com/dhrssjlio/image/upload/v#{timestamp}/boatbnb/#{public_id_with_extension}"
+  image_url = "https://res.cloudinary.com/dhrssjlio/image/upload/v1/boatbnb/#{public_id_with_extension}"
 
   boat.photo.attach(io: URI.open(image_url), filename: "image.jpg", content_type: "image/jpg")
 

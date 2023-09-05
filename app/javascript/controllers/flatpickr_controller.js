@@ -8,7 +8,7 @@ export default class extends Controller {
 
     const options = {
       dateFormat: "d-m-Y",
-      defaultDate: "today",
+      defaultDate: "selectedDates",
       onClose: function (selectedDates, dateStr, instance) {
         if (instance.input === dateInputs[0]) {
           dateInputs[1].focus();
