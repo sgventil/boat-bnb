@@ -1,0 +1,27 @@
+.card-body {
+  padding: 0;
+}
+
+.card-title {
+  font-family: $headers-font;
+  font-size: 16px;
+  color: $black;
+  margin: 0;
+}
+
+.card-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  color: $body-color;
+  margin: 0;
+  padding: 0;
+}
+
+.price-text {
+  color: $black;
+  font-weight: 500;
+}
+
+.rounded-img img {
+  border-radius: 12px;
+}

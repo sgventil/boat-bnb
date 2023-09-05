@@ -1,24 +1,23 @@
 class BoatsController < ApplicationController
   # will need to add authentication for all except :index. :show
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_boat, only: %i[ show edit update destroy ]
+  before_action :set_boat, only: %i[show edit update destroy]
+
   def index
     @boats = policy_scope(Boat).all
-
     @markers = @boats.geocoded.map do |boat|
       {
         lat: boat.latitude,
         lng: boat.longitude
       }
     end
-
     @locations = Boat.pluck(:location).uniq
     @boats = apply_search_filters(@boats, params)
-
     return unless params[:location].present?
 
-    @boats = @boats.where("location ILIKE ?", "%#{params[:location]}%")
-
+    search_terms = params[:location].split
+    search_query = search_terms.map { "location ILIKE ?" }.join(" AND ")
+    @boats = @boats.where(search_query, *search_terms.map { |term| "%#{term}%" })
   end
 
   def show
@@ -76,8 +75,10 @@ class BoatsController < ApplicationController
   end
 
   def apply_search_filters(boats, params)
+    location_query = params[:location].to_s.split.map(&:capitalize).join(' ')
+
     boats = boats.search_by_city(params[:search]) if params[:search].present?
-    boats = boats.where(location: params[:location].capitalize) if params[:location].present?
+    boats = boats.where("location ILIKE ?", "%#{location_query}%") if location_query.present?
     boats = boats.where(availability: true) if params[:availability].present?
     boats
   end
