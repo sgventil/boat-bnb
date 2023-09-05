@@ -3,7 +3,7 @@
     <%= render partial: "shared/booking-card", locals: { booking: @booking } %>
   </div>
 
-  </div class="booking-btns">
+  <div class="booking-show-btns">
       <% if policy(@booking).edit? %>
         <%= link_to "Edit", edit_booking_path(@booking), class: "btn show-btn" %>
       <% end %>
