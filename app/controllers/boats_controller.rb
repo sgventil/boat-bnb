@@ -75,7 +75,6 @@ class BoatsController < ApplicationController
   end
 
   def apply_search_filters(boats, params)
-    # Capitalize each word in the location input if it's present
     location_query = params[:location].to_s.split.map(&:capitalize).join(' ')
 
     boats = boats.search_by_city(params[:search]) if params[:search].present?
