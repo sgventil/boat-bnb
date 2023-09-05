@@ -83,5 +83,4 @@ class BoatsController < ApplicationController
     boats = boats.where(availability: true) if params[:availability].present?
     boats
   end
-
 end
