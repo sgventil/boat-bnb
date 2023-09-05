@@ -1,0 +1,25 @@
+<div class="booking-card <%= booking.start_date >= Date.today ? 'future-booking' : 'past-booking' %>">
+  <p class="booking-title"><%= booking.boat.name %></p>
+  <div class="rounded-img">
+    <div>
+      <% if booking.boat.photo.attached? %>
+        <%= cl_image_tag booking.boat.photo.key, transformation: { width: 300, height: 250, crop: :fill }, class: "img-fluid boat-image" %>
+      <% else %>
+        <p>No photo available</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="content-between">
+      <p class="booking-text"><%= booking.boat.location %></p>
+      <p class="booking-price">$<%= booking.boat.price.to_i %>/day</p>
+    </div>
+
+    <div>
+      <p class="booking-text"> <%= booking.content %> </p>
+      <p class="booking-date">Check-in: <%= booking.start_date %></p>
+      <p class="booking-date">Check-out: <%= booking.end_date %></p>
+    </div>
+  </div>
+</div>

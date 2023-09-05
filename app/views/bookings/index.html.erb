@@ -1,21 +1,9 @@
+
+<h1 class="booking-header"> Your Bookings</h1>
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <h1 class="text-body-emphasis">All your bookings</h1>
-      <% @bookings.each do |booking| %>
-        <div class="card <%= booking.start_date >= Date.today ? 'future-booking' : 'past-booking' %>">
-          <h2><%= booking.boat.name %></h2>
-          <% if booking.boat.photo.attached? %>
-            <%= cl_image_tag booking.boat.photo.key, class: "boat-image-thumbnail" %>
-          <% else %>
-            <p class="text-center">No photo available</p>
-          <% end %>
-          <p><%= booking.content %></p>
-          <p>Check-in date - <%= booking.start_date %></p>
-          <p>Check-out date - <%= booking.end_date %></p>
-          <a href="<%= booking_path(booking.id) %>" class="btn submit-btn rounded">Click here for more options</a>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <% @bookings.each do |booking| %>
+    <%= link_to booking_path(booking.id), class: "link-to-btn" do %>
+        <%= render partial: "shared/booking-card", locals: { booking: booking } %>
+    <% end %>
+  <% end %>
 </div>
