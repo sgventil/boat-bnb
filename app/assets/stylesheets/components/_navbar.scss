@@ -1,9 +1,6 @@
 .navbar-boatbnb {
   justify-content: space-between;
   background: white;
-}
-
-.navbar-boatbnb {
   flex-grow: 0;
 }
 
@@ -20,13 +17,13 @@
 .nav-link {
   display: flex;
   align-items: center;
-  color: black;
+  color: #7a99a7;
   opacity: 1;
   text-decoration: none;
   font-size: 17px;
   padding: 0px 10px;
-}
-.nav-link :hover {
-  opacity: 0.15;
-}
 
+  &:hover {
+    opacity: 1;
+  }
+}
