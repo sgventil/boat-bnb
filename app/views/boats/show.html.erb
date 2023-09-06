@@ -1,10 +1,10 @@
-<div class="container text-center">
+<div class="container text-center mt-3">
   <h1><%= @boat.name %></h1>
 </div>
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-lg-6">
-      <div class="card border-0 shadow-none w-100">
+      <div class="card border-0 shadow-none w-100 p-0 mt-2">
         <div class="rounded-img">
           <% if @boat.photo.attached? %>
             <%= cl_image_tag @boat.photo.key, fetch_format: 'auto', transformation: { width: 750, height: 450, crop: :scale }, class: "img-fluid boat-image" %>
@@ -22,6 +22,12 @@
       </div>
     </div>
   </div>
+  <div class="row justify-content-center">
+ <div class="review-card justify-content-center p-0" style="width: 950px; height: 200px;">
+  <h2 class="review-header p-3">Reviews</h2>
+  <%= render partial: "reviews/index", locals: { reviews: @boat.reviews } %>
+</div>
+</div>
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <div class="sticky-top">
@@ -43,10 +49,4 @@
   <%= link_to "Book this boat", new_boat_booking_path(@boat), class: "show-btn" %>
 
   <%= link_to "All boats", boats_path, class: "show-btn" %>
-</div>
-
-
-<div class="review-card">
-  <h2 class="review-header">Reviews</h2>
-  <%= render partial: "reviews/index", locals: { reviews: @boat.reviews } %>
 </div>
