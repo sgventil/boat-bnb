@@ -22,6 +22,19 @@
       </div>
     </div>
   </div>
+ <div class="d-flex justify-content-center gap-4">
+  <% if policy(@boat).destroy? %>
+  <%= button_to "Delete this boat", boat_path(@boat), method: :delete, data: { confirm: "Are you sure you want to delete this boat?" }, class: "show-btn" %>
+  <% end %>
+
+  <% if policy(@boat).edit? %>
+  <%= link_to "Edit this boat", edit_boat_path(@boat), class: "show-btn" %>
+  <% end %>
+
+  <%= link_to "Book this boat", new_boat_booking_path(@boat), class: "show-btn" %>
+
+  <%= link_to "All boats", boats_path, class: "show-btn" %>
+</div>
   <div class="row justify-content-center">
  <div class="review-card justify-content-center p-0" style="width: 950px; height: 200px;">
   <h2 class="review-header p-3">Reviews</h2>
@@ -35,18 +48,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="d-flex justify-content-center gap-4">
-  <% if policy(@boat).destroy? %>
-  <%= button_to "Delete this boat", boat_path(@boat), method: :delete, data: { confirm: "Are you sure you want to delete this boat?" }, class: "show-btn" %>
-  <% end %>
-
-  <% if policy(@boat).edit? %>
-  <%= link_to "Edit this boat", edit_boat_path(@boat), class: "show-btn" %>
-  <% end %>
-
-  <%= link_to "Book this boat", new_boat_booking_path(@boat), class: "show-btn" %>
-
-  <%= link_to "All boats", boats_path, class: "show-btn" %>
 </div>
