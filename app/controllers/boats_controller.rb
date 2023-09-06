@@ -18,12 +18,13 @@ class BoatsController < ApplicationController
     return unless params[:location].present?
 
     search_terms = params[:location].split
-    search_query = search_terms.map { "location LIKE ?" }.join(" AND ")
+    search_query = search_terms.map { "location ILIKE ?" }.join(" AND ")
     @boats = @boats.where(search_query, *search_terms.map { |term| "%#{term}%" })
   end
 
   def show
     authorize @boat
+
     @markers = @boat.geocode.map {
       {
         lat: @boat.latitude,
@@ -84,8 +85,10 @@ class BoatsController < ApplicationController
   end
 
   def apply_search_filters(boats, params)
+    location_query = params[:location].to_s.split.map(&:capitalize).join(' ')
+
     boats = boats.search_by_city(params[:search]) if params[:search].present?
-    boats = boats.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
+    boats = boats.where("location ILIKE ?", "%#{location_query}%") if location_query.present?
     boats = boats.where(availability: true) if params[:availability].present?
     boats
   end

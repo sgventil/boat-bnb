@@ -1,31 +1,17 @@
-<div class="container mt-4">
-  <div class="card mt-3">
-    <div class="card-body">
-      <h1 class="card-title"><%= @booking.boat.name %></h1>
-      <%= @booking.content %>
-     <div class="d-flex flex-column">
-        <p class="mb-0">Check in: <%= @booking.start_date %></p>
-        <p class="mb-0">Check out: <%= @booking.end_date %></p>
-      </div>
-      <div class="d-flex justify-content-start mt-3">
-        <% if policy(@booking).edit? %>
-          <%= link_to "Edit", edit_booking_path(@booking), class: "btn btn-show mr-2" %>
-        <% end %>
-        <% if policy(@booking).destroy? %>
-          <%= button_to "Delete", booking_path(@booking), class: "btn btn-show", method: :delete, data: { confirm: "Are you sure you want to delete this booking?" } %>
-        <% end %>
-        <%= link_to "Add Review", new_booking_review_path(@booking), class: "btn btn-show ml-auto" %>
-      </div>
-       <div class="small-image-container">
-      <% if @boat.image_filepath.present? %>
-        <%= image_tag @boat.image_filepath, alt: @boat.name, class: "img-fluid small-boat-image" %>
-      <% elsif @boat.photo.attached? %>
-        <%= cl_image_tag @boat.photo.key, class: "img-fluid small-boat-image" %>
-      <% else %>
-        <p class="text-center">No photo available</p>
-      <% end %>
-    </div>
-    </div>
+<div class="container">
+  <div class="booking-show">
+    <%= render partial: "shared/booking-card", locals: { booking: @booking } %>
   </div>
-  <div style="margin-bottom: 100px;"></div>
+
+  <div class="booking-show-btns">
+      <% if policy(@booking).edit? %>
+        <%= link_to "Edit", edit_booking_path(@booking), class: "btn show-btn" %>
+      <% end %>
+
+      <% if policy(@booking).destroy? %>
+        <%= button_to "Delete", booking_path(@booking), class: "btn show-btn", method: :delete, data: { confirm: "Are you sure you want to delete this booking?" } %>
+      <% end %>
+
+      <%= link_to "Add Review", new_booking_review_path(@booking), class: "btn show-btn" %>
+  </div>
 </div>
