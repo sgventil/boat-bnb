@@ -35,12 +35,7 @@
 
   <%= link_to "All boats", boats_path, class: "show-btn" %>
 </div>
-  <div class="row justify-content-center">
- <div class="review-card justify-content-center p-0" style="width: 950px; height: 200px;">
-  <h2 class="review-header p-3">Reviews</h2>
-  <%= render partial: "reviews/index", locals: { reviews: @boat.reviews } %>
-</div>
-</div>
+
   <div class="row justify-content-center">
     <div class="col-lg-8">
       <div class="sticky-top">
@@ -48,4 +43,10 @@
       </div>
     </div>
   </div>
+</div>
+<div class="row justify-content-center">
+ <div class="review-card justify-content-center p-0" style="width: 950px; height: 200px;">
+  <h2 class="review-header p-3">Reviews</h2>
+  <%= render partial: "reviews/index", locals: { reviews: @boat.reviews } %>
+</div>
 </div>
