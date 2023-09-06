@@ -45,7 +45,7 @@ cloudinary_public_ids = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "
     rating: (1..5).to_a.sample,
     name: Faker::Name.unique.name,
     description: Faker::Hipster.paragraphs.join(" "),
-    location: ["Andros, Tinos, Mykonos, Ermoupoli, Naxos, Parikia, Skala, Fira, Chora"].sample,
+    location: ["Andros", "Tinos", "Mykonos", "Ermoupoli", "Naxos", "Parikia", "Skala", "Fira", "Chora"].sample,
     availability: Faker::Boolean.boolean,
     user: [user1, user2, user3, user4, user5].sample
   )
