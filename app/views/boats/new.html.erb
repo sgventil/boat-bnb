@@ -1,20 +1,30 @@
-<div class="container text-center">
-  <h1>Create a New Listing</h1>
-</div>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <%= simple_form_for @boat, { class: "form-horizontal" } do |f| %>
-        <%= f.input :name, label: "Name", required: true, class: "form-control" %>
-        <%= f.input :price, label: "Price", required: true, class: "form-control" %>
-        <%= f.input :description, label: "Description", required: true, class: "form-control" %>
-        <%= f.input :location, label: "Location", required: true, class: "form-control" %>
-        <%= f.input :photo, as: :file %>
-        <div class="form-group">
-          <%= f.submit "Create Boat", class: "button" %>
-          <%= link_to "Home", root_path, class: "btn btn-secondary" %>
-        </div>
-      <% end %>
+<div class="container1" style="background-image: url('https://images.unsplash.com/photo-1535262412227-85541e910204?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')">
+    <div class="container text-center">
+        <h2 id="listing-header">Create a New Listing</h2>
     </div>
-  </div>
+    <div class="listing-card">
+        <div class="form-container">
+            <%= simple_form_for @boat, { class: "form-horizontal" } do |f| %>
+                <div class="form-group">
+                    <%= f.input :name, label: "Name", required: true, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.input :price, label: "Price", required: true, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.input :description, label: "Description", required: true, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.input :location, label: "Location", required: true, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                </div>
+                <div class="form-group">
+                    <%= f.submit "Create Boat", class: "button" %>
+                    <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
 </div>

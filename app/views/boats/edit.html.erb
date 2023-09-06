@@ -1,20 +1,27 @@
-<div class="container text-center">
-  <h1>Edit Your Boat</h1>
-</div>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <%= simple_form_for @boat, html: { class: 'form-horizontal' } do |f| %>
-        <%= f.input :name, required: true, class: 'form-control' %>
-        <%= f.input :description, required: true, class: 'form-control' %>
-        <%= f.input :location, required: true, class: 'form-control' %>
-        <%= f.input :price, required: true, class: 'form-control' %>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <%= f.button :submit, class: 'btn submit-btn' %>
-          </div>
-        </div>
-      <% end %>
+<div class="container1" style="background-image: url('https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80')">
+    <div class="container text-center">
+        <h2 id="edit-header">Edit Your Boat</h2>
     </div>
-  </div>
+    <div class="edit-card">
+        <div class="form-container">
+            <%= simple_form_for @boat, html: { class: 'form-horizontal' } do |f| %>
+              <div class="form-group">
+                  <%= f.input :name, required: true, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                  <%= f.input :description, required: true, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                  <%= f.input :location, required: true, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                  <%= f.input :price, required: true, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                  <%= f.button :submit, class: 'btn submit-btn' %>
+              </div>
+            <% end %>
+        </div>
+    </div>
+
 </div>
