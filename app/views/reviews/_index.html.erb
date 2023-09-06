@@ -3,11 +3,11 @@
     <% reviews.each do |review| %>
       <div class="d-flex justify-content-between">
         <div>
-          <p class="review-name"><%= review.user.username.capitalize %></p>
-          <p class="review-date"><%= review.created_at.strftime("%Y-%m-%d") %></p>
+          <p class="review-name p-3"><%= review.user.username %></p>
+          <p class="review-date p-3"><%= review.created_at.strftime("%Y-%m-%d") %></p>
         </div>
 
-        <p class="star-rating">
+        <p class="star-rating p-3">
           <% review.rating.times do %>
             <i class="fa-solid fa-star"></i>
           <% end %>
