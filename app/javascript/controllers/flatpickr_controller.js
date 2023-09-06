@@ -7,7 +7,7 @@ export default class extends Controller {
 
     const options = {
       dateFormat: "d-m-Y",
-      defaultDate: new Date(), // Set the default date to the current date
+      defaultDate: new Date(),
       onClose: function (selectedDates, dateStr, instance) {
         if (instance.input === dateInputs[0]) {
           dateInputs[1].focus();
@@ -17,7 +17,6 @@ export default class extends Controller {
 
     flatpickr(dateInputs, options);
 
-    // Prevent form submission when "Enter" is pressed
     dateInputs.forEach((input) => {
       input.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
