@@ -8,7 +8,9 @@ class BoatsController < ApplicationController
     @markers = @boats.geocoded.map do |boat|
       {
         lat: boat.latitude,
-        lng: boat.longitude
+        lng: boat.longitude,
+        boatId: boat.id,
+        info_window: render_to_string(partial: "popup", locals: { boat: boat })
       }
     end
     @locations = Boat.pluck(:location).uniq
@@ -22,6 +24,14 @@ class BoatsController < ApplicationController
 
   def show
     authorize @boat
+
+    @markers = @boat.geocode.map {
+      {
+        lat: @boat.latitude,
+        lng: @boat.longitude,
+        info_window: render_to_string(partial: "popup", locals: { boat: @boat })
+      }
+    }
   end
 
   def my_boats
