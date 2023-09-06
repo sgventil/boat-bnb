@@ -1,19 +1,24 @@
 <% if reviews.any? %>
   <ul class="list-group">
     <% reviews.each do |review| %>
-      <%# <li  class="list-group-item"> %>
-      <div class="review-card">
-          <p class="star-rating">Star rating: <%= review.rating.times do %>
-              <i class="fa-solid fa-star"></i>
-              <% end %></p>
-          <p>Comment: <%= review.comment %></p>
-          <p>From: <%= review.user.username.capitalize %></p>
-          <p>Date: <%= review.created_at %></p>
-          <!-- Display other review information if needed -->
+      <div class="d-flex justify-content-between">
+        <div>
+          <p class="review-name"><%= review.user.username.capitalize %></p>
+          <p class="review-date"><%= review.created_at.strftime("%Y-%m-%d") %></p>
+        </div>
+
+        <p class="star-rating">
+          <% review.rating.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+        </p>
       </div>
-      <%# </li> %>
+
+      <div class="border-bottom mb-3">
+        <p class="review-comment"><%= review.comment %></p>
+      </div>
     <% end %>
-  <%# </ul> %>
+  </ul>
 <% else %>
   <p>No reviews available.</p>
 <% end %>
