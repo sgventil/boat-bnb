@@ -17,7 +17,7 @@
 </div>
 
 <div class="d-flex">
-  <div class="bottom-section mb-4 col-8">
+  <div class="bottom-section mb-4 col-lg-8">
     <div class="container-fluid">
       <% if params[:location].present? %>
         <h1>Boats in <%= params[:location].capitalize %></h1>
@@ -28,9 +28,9 @@
         <% if @boats.empty? %>
           <p>Sorry, no boats match your search criteria.</p>
         <% else %>
-        <div class="row row-cols-4 custom-column-height">
+        <div class="row row-cols-1 custom-column-height">
           <% @boats.each do |boat| %>
-            <div class="col-4">
+            <div class="col-sm-6 col-md-4 col-lg-3">
               <a href="<%= boat_path(boat) %>" class="text-decoration-none">
                 <%= render partial: "shared/boatcard", locals: { boat: boat } %>
               </a>
@@ -41,7 +41,7 @@
       </div>
     </div>
   </div>
-  <div class="col-4">
+  <div class="col-sm-6 col-md-4 col-lg-4 ">
     <div class=" sticky-top">
       <div data-controller="map" id="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>" style="width: 100%" class="vh-100"></div>
     </div>
