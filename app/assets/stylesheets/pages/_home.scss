@@ -1,3 +1,7 @@
+.main-container {
+  width: 100%;
+}
+
 .container1 {
   display: flex;
   justify-content: center;
@@ -60,3 +64,7 @@
     color: #888;
     text-shadow: 3px 2px 5px #ffffff;
   }
+
+.d-flex {
+  width: 100%;
+}
