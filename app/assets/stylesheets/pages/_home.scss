@@ -1,13 +1,26 @@
 .main-container {
   width: 100%;
+  /* Other styles for the main container */
+
+  .top-section {
+    /* Adjust top section if needed */
+  }
+
+  /* Adjustments for small devices */
+  @media (max-width: 325px) {
+    .main-container {
+      width: 100vw; /* Use viewport width for full screen width */
+    }
+  }
+  /* Other media queries for different device sizes */
 }
 
 .container1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
   align-items: center;
 }
@@ -52,7 +65,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-}
+
 
   h1 {
     font-size: 4rem;
@@ -64,7 +77,4 @@
     color: #888;
     text-shadow: 3px 2px 5px #ffffff;
   }
-
-.d-flex {
-  width: 100%;
 }
