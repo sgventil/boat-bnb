@@ -47,3 +47,21 @@
     }
   }
 }
+
+@media screen and (min-width: 0px) and (max-width: 576px) {
+
+  .rounded-img {
+    text-align: center;
+    }
+
+    .rounded-img img {
+    width: 100%; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure it remains centered */
+    margin: 0 auto; /* Center the image within its container */
+  }
+
+  .card-body {
+    text-align: center; /* Center align text */
+  }
+}

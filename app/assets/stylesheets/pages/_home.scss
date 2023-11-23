@@ -1,18 +1,4 @@
 .main-container {
-  width: 100%;
-  /* Other styles for the main container */
-
-  .top-section {
-    /* Adjust top section if needed */
-  }
-
-  /* Adjustments for small devices */
-  @media (max-width: 325px) {
-    .main-container {
-      width: 100vw; /* Use viewport width for full screen width */
-    }
-  }
-  /* Other media queries for different device sizes */
 }
 
 .container1 {
@@ -76,5 +62,21 @@
     font-size: 1.5rem;
     color: #888;
     text-shadow: 3px 2px 5px #ffffff;
+  }
+}
+
+.btn {
+  position: fixed;
+  align-content: center;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25%;
+  width: 20%;
+}
+
+@media screen and (max-width: 576px) {
+  .custom-column-height {
+    padding: 0 15px;
   }
 }
