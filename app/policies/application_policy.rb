@@ -12,6 +12,10 @@ class ApplicationPolicy
     false
   end
 
+  def map_view?
+    false
+  end
+
   def show?
     false
   end

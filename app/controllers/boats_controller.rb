@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
   # will need to add authentication for all except :index. :show
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show map_view]
   before_action :set_boat, only: %i[show edit update destroy]
 
   def index
@@ -20,6 +20,27 @@ class BoatsController < ApplicationController
     search_terms = params[:location].split
     search_query = search_terms.map { "location ILIKE ?" }.join(" AND ")
     @boats = @boats.where(search_query, *search_terms.map { |term| "%#{term}%" })
+  end
+
+  def map_view
+    authorize Boat
+    @boats = policy_scope(Boat).all
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        boatId: boat.id,
+        info_window: render_to_string(partial: "popup", locals: { boat: boat })
+      }
+    end
+    @locations = Boat.pluck(:location).uniq
+    @boats = apply_search_filters(@boats, params)
+    return unless params[:location].present?
+
+    search_terms = params[:location].split
+    search_query = search_terms.map { "location ILIKE ?" }.join(" AND ")
+    @boats = @boats.where(search_query, *search_terms.map { |term| "%#{term}%" })
+    render 'map'
   end
 
   def show

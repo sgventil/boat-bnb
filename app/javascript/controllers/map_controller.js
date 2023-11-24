@@ -27,7 +27,7 @@ export default class extends Controller {
     this.markersValue.forEach((marker) => {
       const markerElement = document.createElement("div");
       markerElement.className = "custom-marker";
-      if (window.location.pathname.includes("/boats/")) {
+      if (window.location.pathname.includes("/boats/") && !window.location.pathname.endsWith('/map_view')) {
         const popup = new mapboxgl.Popup({maxWidth: "600px", maxHeight: "200px"}).setHTML(marker.info_window);
         popup.options.offset = [0, -30];
         new mapboxgl.Marker({ element: markerElement })
@@ -44,7 +44,7 @@ export default class extends Controller {
           new mapboxgl.Marker({ element: markerElement })
             .setLngLat([marker.lng, marker.lat])
             .addTo(this.map);
-          }
+        }
     });
   }
 }

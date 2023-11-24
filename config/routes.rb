@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
 
+  get 'boats/map_view', to: 'boats#map_view', as: 'boats_map_view'
+
   resources :users do
     member do
       get 'my_boats', to: 'boats#my_boats'

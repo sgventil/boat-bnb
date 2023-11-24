@@ -6,6 +6,10 @@ class BoatPolicy < ApplicationPolicy
     end
   end
 
+  def map_view?
+    true
+  end
+
   def my_boats?
     true
   end
