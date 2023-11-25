@@ -1,19 +1,5 @@
 <div class="main-container">
-  <div class="top-section mb-4">
-    <div class="container1" id="background-img">
-      <div class="header">
-        <div class="text-container">
-          <div class="text">
-            <h1><i class="fa-solid fa-sailboat fa-1x logo">  BoatB&B</i></h1>
-            <p class="mb-1">Your Number 1 Source for Boat Rentals</p>
-          </div>
-          <div class="search-bar">
-            <%= render partial: "shared/search_bar", locals: { location: @locations } %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render partial: "shared/topsection_banner" %>
   <div class="d-flex">
     <div class="bottom-section">
       <div class="container-fluid d-flex justify-content-center">
@@ -39,7 +25,6 @@
       </div>
     </div>
     <% if @markers.present? %>
-      <!-- Show the map on screens above 425px -->
       <div class="d-none d-sm-block col-sm-4">
         <div class="sticky-top sticky-bottom">
           <div data-controller="map" id="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>" style="width: 100%" class="vh-100"></div>
