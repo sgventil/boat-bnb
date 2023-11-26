@@ -1,17 +1,16 @@
-<div class="search-bar-container">
-  <form class="search-form" action="/boats" accept-charset="UTF-8" method="get">
-    <input type="text" name="location" id="location" placeholder="Search city" class="location-input">
-
+<form class="search-form" action="/boats" accept-charset="UTF-8" method="get">
+  <div class="input-fields">
+    <div class="location-input-container">
+      <input type="text" name="location" id="location" placeholder="Search city" class="location-input">
+    </div>
     <div class="date-input-container">
       <input type="text" name="checkin_date" id="checkin_date" placeholder="Check In Date" class="date-input" data-controller="flatpickr" readonly="readonly">
     </div>
-
     <div class="date-input-container">
       <input type="text" name="checkout_date" id="checkout_date" placeholder="Check Out Date" class="date-input" data-controller="flatpickr" readonly="readonly">
     </div>
-
-    <button type="submit" name="commit" class="search-button" data-action="click->flatpickr#search" data-disable-with="Searching...">
-      <i class="fa fa-search"></i> Search
-    </button>
-  </form>
-</div>
+  </div>
+  <button type="submit" name="commit" class="search-button" data-action="click->flatpickr#search" data-disable-with="Searching...">
+  <i class="fa fa-search"></i> Search
+  </button>
+</form>
