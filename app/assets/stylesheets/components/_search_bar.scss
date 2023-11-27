@@ -1,47 +1,40 @@
-// .search-form {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-//   .input-fields {
-//     flex: 1;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 2px;
-//   }
+@media (min-width: 1024px) {
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
-//   .location-input {
-//     flex: 1;
-//     border: 1px solid $gray;
-//     border-radius: 8px;
-//   }
+    .input-fields {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%; /* Occupy full width of the parent */
 
-//   .date-input-container {
-//     flex: 1;
-//     border-radius: 8px;
-//   }
+      .location-input,
+      .date-input {
+        width: calc(100% - 5px); /* Adjust width to account for padding and borders */
+        max-width: 100%;
+        padding: 4px;
+        border-radius: 18px;
+        border: solid 2px $gray;
+        // box-sizing: border-box; /* Include padding in the width calculation */
+      }
+    }
 
-//   .search-button {
-//     background-color: #7a99a7;
-//     color: #fff;
-//     border: solid 2px #fff;
-//     border-radius: 25px;
-//     font-size: 14px;
-//     margin-top: 10px;
-//     cursor: pointer;
-//   }
-// // }
-
-// .search-button:hover {
-//   background-color: #03b0fa;
-//   transition: background-color 0.3s;
-// }
-
-// .search-button i {
-//   margin-right: 5px;
-// }
+    .search-button {
+      background-color: $logo;
+      color: $light-gray;
+      border: solid 2px $light-gray;
+      border-radius: 25px;
+      font-size: 20px;
+      margin-top: 10px;
+      padding: 8px 20px;
+      cursor: pointer;
+    }
+  }
+}
 
 @media (min-width: 576px) {
   .search-form {
@@ -49,28 +42,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     .input-fields {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      gap: 2px;
+      width: 100%; /* Occupy full width of the parent */
 
-      .location-input {
-        border: 1px solid $gray;
-        border-radius: 8px;
-        width: 33%;
-      }
-
-      .date-input  {
-        width: 33%;
+      .location-input,
+      .date-input {
+        width: calc(100% - 5px); /* Adjust width to account for padding and borders */
+        max-width: 100%;
+        border-radius: 10px;
+        border: solid 2px $gray;
+        box-sizing: border-box; /* Include padding in the width calculation */
       }
     }
 
     .search-button {
-      background-color: #7a99a7;
-      color: #fff;
-      border: solid 2px #fff;
+      background-color: $logo;
+      color: $light-gray;
+      border: solid 2px $light-gray;
       border-radius: 25px;
       font-size: 14px;
       margin-top: 10px;
@@ -79,7 +72,7 @@
   }
 }
 
-@media (min-width: 0px) and (max-width: 575px) {
+@media (min-width: 0px) and (max-width: 576px) {
 
   .search-form {
     display: flex;
@@ -89,8 +82,7 @@
 
     .location-input {
       padding: 4px;
-      border: 1px solid $gray;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 16px;
       outline: none;
     }
@@ -102,9 +94,9 @@
     }
 
     .search-button {
-      background-color: #7a99a7;
-      color: #fff;
-      border: solid 2px #fff;
+      background-color: $logo;
+      color: $light-gray;
+      border: solid 2px $light-gray;
       border-radius: 25px;
       font-size: 14px;
       margin-top: 10px;

@@ -1,38 +1,47 @@
-.navbar-boatbnb {
-  justify-content: space-between;
-  background: white;
-}
+@media (min-width: 768px) {
 
-.logo {
-  height: 40px;
-  color: $logo;
-  display: flex;
-  align-items: center;
-}
+  .navbar-boatbnb {
+    justify-content: space-between;
+    background: white;
+    height: 75px;
+  }
 
-.logo-hover:hover {
-  color: #7a99a7;
-}
+  .logo {
+    height: 40px;
+    color: $logo;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 5px;
+  }
 
-.nav-link {
-  display: flex;
-  align-items: center;
-  color: #7a99a7;
-  opacity: 1;
-  text-decoration: none;
-  font-size: 17px;
-  flex-wrap: nowrap;
-  gap: 8px;
-  white-space: nowrap;
+  .logo-hover:hover {
+    color: #7a99a7;
+  }
 
-  &:hover {
+  .nav-link {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: $gray;
     opacity: 1;
+    text-decoration: none;
+    font-size: 18px;
+    flex-wrap: nowrap;
+    gap: 12px;
+    white-space: nowrap;
+    margin-right: 15px;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 
   .navbar-boatbnb {
+    background: white;
     height: 66px;
   }
 
@@ -56,15 +65,20 @@
     box-sizing: border-box;
     overflow-x: hidden;
     font-size: 14px;
+    gap: 5px;
 
     /* Increase space between links for specific screen sizes */
-      @media (min-width: 325px) and (max-width: 376px) {
-        gap: 20px;
+      @media (min-width: 333px) and (max-width: 377px) {
+        gap: 15px;
       /* Adjust space between links for 320px to 375px screens */
       }
 
-      @media (min-width: 377px) and (max-width: 426px) {
-        gap: 33px; /* Adjust space between links for 376px to 420px screens */
+      @media (min-width: 378px) and (max-width: 576px) {
+        gap: 30px; /* Adjust space between links for 376px to 420px screens */
+      }
+
+      @media (min-width: 577px) and (max-width: 768px) {
+        gap: 45px; /* Adjust space between links for 376px to 420px screens */
       }
     }
   }
