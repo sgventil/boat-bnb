@@ -1,19 +1,5 @@
 <div class="main-container">
-  <div class="top-section mb-4">
-    <div class="container1" id="background-img">
-      <div class="header">
-        <div class="text-container">
-          <div class="text">
-            <h1><i class="fa-solid fa-sailboat fa-1x">  BoatB&B</i></h1>
-            <p class="mb-1">Your Number 1 Source for Boat Rentals</p>
-          </div>
-          <div class="search-bar">
-            <%= render partial: "shared/search_bar", locals: { location: @locations } %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render partial: "shared/topsection_banner" %>
   <% if @markers.present? %>
     <!-- Show the map on screens above 425px -->
     <div class="col-12">
@@ -22,5 +8,4 @@
       </div>
     </div>
   <% end %>
-</div>
 </div>
