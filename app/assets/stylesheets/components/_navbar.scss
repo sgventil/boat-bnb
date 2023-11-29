@@ -1,9 +1,13 @@
-@media (min-width: 768px) {
+:root {
+  --navbar-height: 80px;
+}
+
+@media (min-width: 767px) {
 
   .navbar-boatbnb {
     justify-content: space-between;
     background: white;
-    height: 75px;
+    height: calc(var(--navbar-height) - 5px);
   }
 
   .logo {
@@ -38,12 +42,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
   .navbar-boatbnb {
     background: white;
-    height: 66px;
-  }
+    height: calc(var(--navbar-height) - 14px);
+    }
+
 
   .container-fluid {
     flex-direction: column;
