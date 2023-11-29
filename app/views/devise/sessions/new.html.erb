@@ -2,23 +2,25 @@
   <p class="alert"><%= alert %></p>
   <div class="banner-container">
     <div id="background-image-login">
-      <div class="login-wrapper">
-        <h2>Log in</h2>
-        <div class="log-in-card">
-          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-inputs">
-              <%= f.input :email,
-                          required: false,
-                          autofocus: true,
-                          input_html: { autocomplete: "email" } %>
-              <%= f.input :password,
-                          required: false,
-                          input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-              <%= f.button :submit, "Log in" %>
-              <%= render "devise/shared/links" %>
-            </div>
-          <% end %>
+      <div class="dark-overlay"></div>
+        <div class="login-wrapper">
+          <h2>Your Access Data</h2>
+          <div class="log-in-card">
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-inputs">
+                <%= f.input :email,
+                            required: false,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" } %>
+                <%= f.input :password,
+                            required: false,
+                            input_html: { autocomplete: "current-password" } %>
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                <%= f.button :submit, "Log in" %>
+                <%= render "devise/shared/links" %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
