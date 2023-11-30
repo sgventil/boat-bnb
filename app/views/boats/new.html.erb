@@ -11,8 +11,10 @@
                 <%= f.input :description, label: "Description", required: true, class: "form-control" %>
                 <%= f.input :location, label: "Location", required: true, class: "form-control" %>
                 <%= f.input :photo, as: :file %>
-                <%= f.submit "Create Boat", class: "button" %>
-                <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+                <div class="d-flex justify-content-between">
+                  <button type="submit" data-action="Create Boat", class="submit-btn custom-submit-btn">
+                  <%= link_to "Home", root_path, class: "submit-btn custom-submit-btn" %>
+                </div>
               </div>
             <% end %>
           </div>
