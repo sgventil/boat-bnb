@@ -5,29 +5,16 @@
         <div class="login-wrapper">
           <h2 id="listing-header">Create a New Listing</h2>
           <div class="listing-card">
-            <div class="form-container">
-                <%= simple_form_for @boat, { class: "form-horizontal" } do |f| %>
-                    <div class="form-group">
-                        <%= f.input :name, label: "Name", required: true, class: "form-control" %>
-                    </div>
-                    <div class="form-group">
-                        <%= f.input :price, label: "Price", required: true, class: "form-control" %>
-                    </div>
-                    <div class="form-group">
-                        <%= f.input :description, label: "Description", required: true, class: "form-control" %>
-                    </div>
-                    <div class="form-group">
-                        <%= f.input :location, label: "Location", required: true, class: "form-control" %>
-                    </div>
-                    <div class="form-group">
-                        <%= f.input :photo, as: :file %>
-                    </div>
-                    <div class="form-group">
-                        <%= f.submit "Create Boat", class: "button" %>
-                        <%= link_to "Home", root_path, class: "btn btn-secondary" %>
-                    </div>
-                <% end %>
-            </div>
+            <%= simple_form_for @boat, { class: "form-horizontal" } do |f| %>
+              <div class="form-group">
+                <%= f.input :price, label: "Price", required: true, class: "form-control" %>
+                <%= f.input :description, label: "Description", required: true, class: "form-control" %>
+                <%= f.input :location, label: "Location", required: true, class: "form-control" %>
+                <%= f.input :photo, as: :file %>
+                <%= f.submit "Create Boat", class: "button" %>
+                <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
