@@ -22,17 +22,6 @@
         // box-sizing: border-box; /* Include padding in the width calculation */
       }
     }
-
-    .search-button {
-      background-color: $logo;
-      color: $light-gray;
-      border: solid 2px $light-gray;
-      border-radius: 25px;
-      font-size: 20px;
-      margin-top: 10px;
-      padding: 8px 20px;
-      cursor: pointer;
-    }
   }
 }
 
@@ -59,16 +48,6 @@
         box-sizing: border-box; /* Include padding in the width calculation */
       }
     }
-
-    .search-button {
-      background-color: $logo;
-      color: $light-gray;
-      border: solid 2px $light-gray;
-      border-radius: 25px;
-      font-size: 14px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
   }
 }
 
@@ -91,16 +70,6 @@
       .date-input {
         display: none;
       }
-    }
-
-    .search-button {
-      background-color: $logo;
-      color: $light-gray;
-      border: solid 2px $light-gray;
-      border-radius: 25px;
-      font-size: 14px;
-      margin-top: 10px;
-      cursor: pointer;
     }
   }
 }

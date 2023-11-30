@@ -1,7 +1,72 @@
+:root {
+  font-size: 12px;
+  // box-sizing: inherit;
+}
+
 .log-in-card {
-  background-color: #F1F0E8;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 500px;
+  height: 66%;
+  max-height: 600px;
+  color: black;
+  font-weight: bold ;
+  border: 2px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.33);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+
+  .form-inputs {
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+
+  .form-inputs input{
+    width: 100%;
+    border: solid 1px $headers-color;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 0.75rem;
+    transition: box-shadow 200ms ease-out;
+  }
+
+  .form-inputs input:focus,
+  .form-inputs input:active {
+    box-shadow: 0 0 0 0.25rem $logo;
+  }
+}
+
+
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.custom-checkbox {
+  margin-right: 0.5rem;
+}
+
+.btn-links {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+.social-networks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-facebook-f {
+  font-size: 20px;
+  align-content: center;
 }
