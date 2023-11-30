@@ -4,9 +4,9 @@
       <div class="dark-overlay"></div>
         <div class="login-wrapper">
           <h2 id="listing-header">Create a New Listing</h2>
-          <div class="listing-card">
+          <div class="log-in-card">
             <%= simple_form_for @boat, { class: "form-horizontal" } do |f| %>
-              <div class="form-group">
+              <div class="form-inputs">
                 <%= f.input :price, label: "Price", required: true, class: "form-control" %>
                 <%= f.input :description, label: "Description", required: true, class: "form-control" %>
                 <%= f.input :location, label: "Location", required: true, class: "form-control" %>
