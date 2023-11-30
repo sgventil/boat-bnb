@@ -10,8 +10,8 @@
   max-width: 500px;
   height: 66%;
   max-height: 600px;
-  color: black;
-  font-weight: bold ;
+  color: $light-gray;
+  font-size: 12px;
   border: 2px solid rgba(255, 255, 255, .25);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.33);
@@ -36,37 +36,48 @@
   .form-inputs input:active {
     box-shadow: 0 0 0 0.25rem $logo;
   }
-}
 
+  .remember-me {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+  }
 
+  .custom-checkbox {
+    margin-right: 0.5rem;
+  }
 
-.remember-me {
-  display: flex;
-  align-items: center;
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-}
+  .btn-links {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    color: $black;
+  }
 
-.custom-checkbox {
-  margin-right: 0.5rem;
-}
+  .social-networks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.btn-links {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  gap: 1rem;
-  font-weight: bold;
-  color: black;
-}
+  .fa-facebook-f {
+    font-size: 20px;
+    align-content: center;
+  }
 
-.social-networks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .link-registration a {
+    color: $light-gray;
+    text-decoration: none;
+    padding: 0.5rem;
 
-.fa-facebook-f {
-  font-size: 20px;
-  align-content: center;
+    &:hover {
+      color: $black;
+    }
+  }
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
 }
