@@ -1,7 +1,4 @@
 .submit-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100px;
   height: 33px;
   color: $light-gray;
@@ -78,27 +75,6 @@
 
   @media (max-width: 768px) {
     background: #1877F2;
-  }
-}
-
-.registration {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 33px;
-  color: $light-gray;
-  background-color: $logo;
-  border: solid 2px $light-gray;
-  border-radius: 25px;
-  margin: auto;
-  cursor: pointer;
-
-  &:hover {
-    color: $black;
-    background-color: rgba(255, 255, 255, 0.33);
-    border: solid 2px $black;
-    font-weight: bold;
   }
 }
 
