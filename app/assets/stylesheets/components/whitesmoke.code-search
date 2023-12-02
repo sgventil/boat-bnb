@@ -1,0 +1,9 @@
+# Query: whitesmoke
+# ContextLines: 1
+
+1 result - 1 file
+
+app/assets/stylesheets/config/_colors.scss:
+  10  $gray: rgb(99, 99, 99);
+  11: $light-gray: whitesmoke;
+  12  $logo: #36504c;
