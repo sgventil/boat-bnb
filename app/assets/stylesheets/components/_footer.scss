@@ -1,32 +1,40 @@
-.footer {
-  background: #F4F4F4;
-  color: rgba(0,0,0,0.3);
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  overflow: hidden;
+@media (min-width: 630px) {
+  .footer {
+    background: #F4F4F4;
+    color: rgba(0,0,0,0.5);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .footer-links a {
+    color: black;
+    opacity: 0.5;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 0px 10px;
+  }
+
+  .footer-links a:hover {
+    opacity: 1;
+  }
+
+  .footer-copyright {
+    padding-right: 12px;
+    font-size: 17px;
+  }
 }
 
-.footer-links {
-  display: flex;
-  align-items: center;
-  padding: 12px;
-}
-
-.footer-links a {
-  color: rgb(255, 6, 6);
-  opacity: 0.5;
-  text-decoration: none;
-  font-size: 17px;
-  padding: 0px 10px;
-}
-
-.footer-links a:hover {
-  opacity: 1;
-}
- @media (max-width: 576px;) {
+@media (max-width: 426px) {
   .footer {
     background: #F4F4F4;
     color: rgba(0,0,0,0.3);
@@ -38,13 +46,70 @@
     overflow: hidden;
   }
 
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .flexlink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .footer-links a {
-    color: rgb(252, 0, 0);
+    color: black;
     opacity: 0.5;
     text-decoration: none;
     font-size: 10px;
-    padding: 0px 10px;
+    padding: 0rem 1rem;
   }
 
+  .footer-copyright {
+    margin-right: 4px;
+    font-size: 10px;
+  }
 }
- }
+
+@media (min-width: 426px) and (max-width: 630px) {
+  .footer {
+    background: #F4F4F4;
+    color: rgba(0,0,0,0.3);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .flexlink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    color: black;
+    opacity: 0.5;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 0rem 1.2rem;
+  }
+
+  .footer-copyright {
+    margin-right: 4px;
+    font-size: 12px;
+  }
+}

@@ -8,6 +8,12 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
     container: this.element,
     style: 'mapbox://styles/mapbox/streets-v12',
+    center: [36, -5], // Specify the initial center coordinates [longitude, latitude]// Specify the initial zoom level
+    minZoom: 5,
+    maxZoom: 15,
+    });
+    this.map.on('load', () => {
+      this.map.setZoom(5); // Set the initial zoom level
     });
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
