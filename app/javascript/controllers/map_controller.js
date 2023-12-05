@@ -5,18 +5,28 @@ export default class extends Controller {
   static values = {apiKey: String, markers: Array}
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
+
+    // const initialCoordinates = [0, 0]; // Set your initial coordinates here
+    // const maxBounds = [
+    //   [-180, -85], // Southwest coordinates
+    //   [180, 85]    // Northeast coordinates
+    // ];
+
     this.map = new mapboxgl.Map({
-    container: this.element,
-    style: 'mapbox://styles/mapbox/streets-v12',
-    center: [36, -5], // Specify the initial center coordinates [longitude, latitude]// Specify the initial zoom level
-    minZoom: 5,
-    maxZoom: 15,
+      container: this.element,
+      style: 'mapbox://styles/mapbox/streets-v12',
+      // center: initialCoordinates, // Set initial coordinates
+      // zoom: 4, // Set initial zoom level
+      // maxZoom: 15, // Set maximum allowed zoom level
+      // maxBounds: maxBounds // Set map boundaries
     });
+
     this.map.on('load', () => {
-      this.map.setZoom(5); // Set the initial zoom level
+      this.map.setZoom(4); // Set initial zoom level
     });
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+
+    this.addMarkersToMap();
+    this.fitMapToMarkers();
   }
 
   #fitMapToMarkers() {
