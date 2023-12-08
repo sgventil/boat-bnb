@@ -4,29 +4,27 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {apiKey: String, markers: Array}
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
-
-    // const initialCoordinates = [0, 0]; // Set your initial coordinates here
+    mapboxgl.accessToken = this.apiKeyValue;
+    const maxZoomOutLevel = 4; // Set your maximum zoom out level
     // const maxBounds = [
-    //   [-180, -85], // Southwest coordinates
-    //   [180, 85]    // Northeast coordinates
+    //   [-180, -35], // Southwest bound (longitude, latitude)
+    //   [180, 35] // Northeast bound
     // ];
 
     this.map = new mapboxgl.Map({
       container: this.element,
       style: 'mapbox://styles/mapbox/streets-v12',
-      // center: initialCoordinates, // Set initial coordinates
-      // zoom: 4, // Set initial zoom level
-      // maxZoom: 15, // Set maximum allowed zoom level
-      // maxBounds: maxBounds // Set map boundaries
+      center: [-74.5, 40],
+      zoom: 4
+      // minZoom: maxZoomOutLevel
+      // maxBounds: maxBounds
     });
 
     this.map.on('load', () => {
-      this.map.setZoom(4); // Set initial zoom level
+      this.map.setZoom(maxZoomOutLevel); // Set the zoom level to the maximum zoom out level on load
+      this.#addMarkersToMap();
+      this.#fitMapToMarkers();
     });
-
-    this.addMarkersToMap();
-    this.fitMapToMarkers();
   }
 
   #fitMapToMarkers() {

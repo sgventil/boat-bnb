@@ -36,13 +36,13 @@
   <%= link_to "All boats", boats_path, class: "show-btn" %>
 </div>
 
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <div class="sticky-top">
-        <div data-controller="map" id="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>" style="width: 950px; height: 400px;"></div>
+    <% if @markers.present? %>
+      <div class="col-lg-8">
+        <div class="sticky-top sticky-bottom">
+          <div data-controller="map" id="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>" style="width: 100%" class="vh-100"></div>
+        </div>
       </div>
-    </div>
-  </div>
+    <% end %>
 </div>
 <div class="row justify-content-center">
  <div class="review-card justify-content-center p-0" style="width: 950px; height: 200px;">
