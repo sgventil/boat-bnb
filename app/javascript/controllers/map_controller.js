@@ -39,6 +39,7 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
+      // const info_window = new mapboxgl.Popup().setHTML(marker.info_window)
       const markerElement = document.createElement("div");
       markerElement.className = "custom-marker";
       if (window.location.pathname.includes("/boats/") && !window.location.pathname.endsWith('/map_view')) {
