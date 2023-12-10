@@ -4,37 +4,18 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {apiKey: String, markers: Array}
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue;
-    const maxZoomOutLevel = 4; // Set your maximum zoom out level
-    // const maxBounds = [
-    //   [-180, -35], // Southwest bound (longitude, latitude)
-    //   [180, 35] // Northeast bound
-    // ];
-
+    mapboxgl.accessToken = this.apiKeyValue
+    const firstBoat = this.markersValue[0];
     this.map = new mapboxgl.Map({
       container: this.element,
       style: 'mapbox://styles/mapbox/streets-v12',
-      center: [-74.5, 40],
-      zoom: 4
-      // minZoom: maxZoomOutLevel
-      // maxBounds: maxBounds
+      center: [firstBoat.lng, firstBoat.lat],
+      zoom: 3,
+      maxZoom: 18,
+      minZoom: 3
     });
 
-    this.map.on('load', () => {
-      this.map.setZoom(maxZoomOutLevel); // Set the zoom level to the maximum zoom out level on load
-      this.#addMarkersToMap();
-      this.#fitMapToMarkers();
-    });
-  }
-
-  #fitMapToMarkers() {
-    const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach((marker) => {
-      bounds.extend([marker.lng, marker.lat]);
-    })
-    this.map.fitBounds(bounds, {
-      padding: 40, duration: 25
-      });
+    this.#addMarkersToMap();
   }
 
   #addMarkersToMap() {
@@ -62,4 +43,14 @@ export default class extends Controller {
         }
     });
   }
+
+  // #fitMapToMarkers() {
+  //   const bounds = new mapboxgl.LngLatBounds()
+  //   this.markersValue.forEach((marker) => {
+  //     bounds.extend([marker.lng, marker.lat]);
+  //   })
+  //   this.map.fitBounds(bounds, {
+  //     padding: 40, duration: 25
+  //     });
+  // }
 }

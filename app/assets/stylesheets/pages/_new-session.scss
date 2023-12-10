@@ -5,28 +5,27 @@ html, body {
 }
 
 .main-container {
-    height: 100vh;
-    // display: flex;
-    // flex-direction: column;
+height: 100%;
 }
 
 .banner-container {
-    position: relative;
+    // position: relative;
     // flex: 1;
     height: 100%;
 
   #background-image-login {
-    position: relative;
+    // position: relative;
     width: 100%;
     height: 100%;
     background-image: url('https://images.unsplash.com/photo-1520483725102-a4daafec9a73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
   }
 
   .dark-overlay {
-    position: absolute;
+    // position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -36,7 +35,7 @@ html, body {
 
 
   .login-wrapper {
-    position: relative;
+    // position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
