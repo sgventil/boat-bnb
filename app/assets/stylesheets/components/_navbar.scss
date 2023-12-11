@@ -1,90 +1,85 @@
-:root {
-  --navbar-height: 80px;
+.navbar-boatbnb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 
-@media (min-width: 767px) {
+.boat-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $logo-font;
+  font-size: 2.88rem;
+  color: $logo;
+  margin-left: 1vw;
+  gap: 0.5vw;
 
-  .navbar-boatbnb {
-    justify-content: space-between;
-    background: white;
-    height: calc(var(--navbar-height) - 5px);
+  &:hover {
+    color: $button-hover;
+
+    .fa-sailboat {
+      color: $button-hover;
+    }
   }
 
-  .logo {
-    height: 40px;
-    color: $logo;
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    gap: 5px;
+  p {
+    font-size: 3.33rem;
+    margin: 0vh 0vw;
   }
 
-  .logo-hover:hover {
-    color: #7a99a7;
+  @media (min-width: 575px) and (max-width:767px) {
+    font-size: 2.1rem;
+
+   p {
+     font-size: 2.25rem;
+   }
   }
 
-  .nav-link {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: $gray;
-    opacity: 1;
+  @media (max-width: 575px) {
+    font-size: 2.1rem;
+    margin-left: 0vw;
+    margin-top: 1.5vh;
+    gap: 3vw;
+
+    p {
+      font-size: 2.25rem;
+      margin-top: 1.5vh;
+    }
+  }
+}
+
+.nav-link {
+  display: flex;
+  align-self: flex-end;
+  gap: 3.33vw;
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-right: 3.33vw;
+
+  a {
     text-decoration: none;
-    font-size: 18px;
-    flex-wrap: nowrap;
-    gap: 12px;
-    white-space: nowrap;
-    margin-right: 15px;
+    color: $black;
+    opacity: 0.66;
 
     &:hover {
-      opacity: 1;
+      opacity: 0.88;
     }
   }
-}
 
-@media (max-width: 767px) {
+  @media (min-width: 575px) and (max-width:767px) {
+    font-size: 1.75rem;
+  }
 
-  .navbar-boatbnb {
-    background: white;
-    height: calc(var(--navbar-height) - 14px);
-    }
-
-
-  .container-fluid {
-    flex-direction: column;
-    align-items: center;
-
-    .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    font-size: 20px;
-    color: $logo;
-    gap: 5px;
-    }
-
-    .nav-link {
-    display: flex;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    font-size: 14px;
-    gap: 5px;
-
-    /* Increase space between links for specific screen sizes */
-      @media (min-width: 333px) and (max-width: 377px) {
-        gap: 15px;
-      /* Adjust space between links for 320px to 375px screens */
-      }
-
-      @media (min-width: 378px) and (max-width: 576px) {
-        gap: 30px; /* Adjust space between links for 376px to 420px screens */
-      }
-
-      @media (min-width: 577px) and (max-width: 768px) {
-        gap: 45px; /* Adjust space between links for 376px to 420px screens */
-      }
-    }
+  @media (max-width: 575px) {
+    align-self: center;
+    font-size: 1.25rem;
+    margin-right: 0vw;
+    margin-top: auto;
   }
 }

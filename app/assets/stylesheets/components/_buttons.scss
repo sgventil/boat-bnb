@@ -1,9 +1,9 @@
 .submit-btn {
   width: 100px;
   height: 33px;
-  color: $light-gray;
+  color: $white;
   background-color: $logo;
-  border: solid 2px $light-gray;
+  border: solid 2px $white;
   border-radius: 25px;
   font-size: 14px;
   font-weight: bold;
@@ -23,7 +23,7 @@
 }
 
 .custom-submit-btn {
-  --bs-btn-color: $light-gray;
+  --bs-btn-color: $white;
 }
 
 .show-btn {
@@ -41,8 +41,8 @@
   width: 100px;
   height: 33px;
   background-color: $logo;
-  color: $light-gray;
-  border: solid 2px $light-gray;
+  color: $white;
+  border: solid 2px $white;
   border-radius: 25px;
   font-size: 14px;
   font-weight: bold;
@@ -58,8 +58,8 @@
   height: 33px;
   border-radius: 25px;
   background: transparent;
-  border: solid 2px $light-gray;
-  color: $light-gray;
+  border: solid 2px $white;
+  color: $white;
   font-weight: bold;
   text-decoration: none;
   margin-bottom: 10px;
