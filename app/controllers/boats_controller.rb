@@ -10,7 +10,8 @@ class BoatsController < ApplicationController
         lat: boat.latitude,
         lng: boat.longitude,
         boatId: boat.id,
-        info_window: render_to_string(partial: "popup", locals: { boat: boat })
+        info_window: render_to_string(partial: "popup", locals: { boat: boat }),
+        image_url: helpers.asset_url("pin2.png")
       }
     end
     @locations = Boat.pluck(:location).uniq
@@ -30,7 +31,8 @@ class BoatsController < ApplicationController
         lat: boat.latitude,
         lng: boat.longitude,
         boatId: boat.id,
-        info_window: render_to_string(partial: "popup", locals: { boat: boat })
+        info_window: render_to_string(partial: "popup", locals: { boat: boat }),
+        image_url: helpers.asset_url("pin2.png")
       }
     end
     @locations = Boat.pluck(:location).uniq
@@ -50,7 +52,8 @@ class BoatsController < ApplicationController
       {
         lat: @boat.latitude,
         lng: @boat.longitude,
-        info_window: render_to_string(partial: "popup", locals: { boat: @boat })
+        info_window: render_to_string(partial: "popup", locals: { boat: @boat }),
+        image_url: helpers.asset_url("pin2.png")
       }
     }
   end

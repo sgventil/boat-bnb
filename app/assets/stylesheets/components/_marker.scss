@@ -1,0 +1,11 @@
+.custom-marker {
+  background-size: cover;
+  width: 3rem;
+  height: 4rem;
+  margin-left: -1,5rem;
+  margin-top: -3rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

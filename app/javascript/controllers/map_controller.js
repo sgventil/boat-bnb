@@ -23,23 +23,25 @@ export default class extends Controller {
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       // const info_window = new mapboxgl.Popup().setHTML(marker.info_window)
-      const markerElement = document.createElement("div");
-      markerElement.className = "custom-marker";
+      const customMarker = document.createElement("div");
+
+      customMarker.style.backgroundImage = `url("${marker.image_url}")`;
+      customMarker.classList.add("custom-marker");
       if (window.location.pathname.includes("/boats/") && !window.location.pathname.endsWith('/map_view')) {
         const popup = new mapboxgl.Popup({maxWidth: "600px", maxHeight: "200px"}).setHTML(marker.info_window);
         popup.options.offset = [0, -30];
-        new mapboxgl.Marker({ element: markerElement })
+        new mapboxgl.Marker({ element: customMarker })
           .setLngLat([marker.lng, marker.lat])
           .setPopup(popup)
           .addTo(this.map);
 
       } else {
-          markerElement.addEventListener("click", () => {
+          customMarker.addEventListener("click", () => {
             const boatId = marker.boat;
             window.location.href = `/boats/${marker.boatId}`;
           });
 
-          new mapboxgl.Marker({ element: markerElement })
+          new mapboxgl.Marker({ element: customMarker })
             .setLngLat([marker.lng, marker.lat])
             .addTo(this.map);
         }
