@@ -1,4 +1,33 @@
+.main-container-index {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 20px;
+}
 
+.index-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.bottom-section {
+  /* Your styles for the bottom section */
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust as needed */
+  grid-gap: 20px;
+}
+
+.card-item {
+  /* Your card item styles */
+}
+
+.map-container {
+  /* Your styles for the map container */
+}
 .btn-map {
   position: fixed;
   align-content: center;
