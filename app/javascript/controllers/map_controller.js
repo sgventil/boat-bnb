@@ -4,6 +4,8 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {apiKey: String, markers: Array}
   connect() {
+    const mapContainer = document.getElementById('map');
+    mapContainer.innerHTML = '';
     mapboxgl.accessToken = this.apiKeyValue
     const firstBoat = this.markersValue[0];
     this.map = new mapboxgl.Map({
