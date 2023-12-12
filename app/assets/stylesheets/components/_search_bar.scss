@@ -1,75 +1,65 @@
-@media (min-width: 1024px) {
-  .search-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75vw;
 
-    .input-fields {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      width: 100%;
-
-      .location-input,
-      .date-input {
-        width: calc(100% - 5px);
-        max-width: 100%;
-        padding: 4px;
-        border-radius: 18px;
-        border: solid 2px $gray;
-        box-sizing: border-box;
-      }
-    }
-  }
-}
-
-@media (min-width: 576px) {
-  .search-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    .input-fields {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      width: 100%;
-
-      .location-input,
-      .date-input {
-        width: calc(100% - 5px);
-        max-width: 100%;
-        border-radius: 10px;
-        border: solid 2px $gray;
-        box-sizing: border-box;
-      }
-    }
-  }
-}
-
-@media (min-width: 0px) and (max-width: 576px) {
-
-  .search-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .input-fields {
 
     .location-input {
-      padding: 4px;
-      border-radius: 10px;
-      font-size: 16px;
+      border-radius: 4vh;
+      font-size: 2.5vh;
       outline: none;
     }
 
-    .date-input-container {
+    .date-input {
+      display: none;
+    }
+
+    @media (min-width: 576px) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 2vw;
+
+      .location-input,
       .date-input {
-        display: none;
+        border-radius: 4vh;
+        font-size: 2.5vh;
+        outline: none;
       }
+
+      .date-input {
+        display: block;
+      }
+    }
+  }
+
+  .input-fields input{
+    width: 100%;
+    border: solid 1px $headers-color;
+    outline: none;
+    border-radius: 1rem;
+    transition: box-shadow 200ms ease-out;
+  }
+
+  .input-fields input:focus,
+  .input-fields input:active {
+    box-shadow: 0 0 0 0.25rem $logo;
+  }
+
+  .search-button {
+    background-color: $logo;
+    color: $white;
+    border: solid 0.2rem $white;
+    border-radius: 2rem;
+    font-size: 2.5vh;
+    font-weight: bold;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      padding: 0vh 0.75vh;
     }
   }
 }

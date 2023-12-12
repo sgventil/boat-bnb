@@ -20,14 +20,6 @@
   color: $logo;
   gap: 0.75vw;
 
-  &:hover {
-    color: $button-hover;
-
-    .fa-sailboat {
-      color: $button-hover;
-    }
-  }
-
   p {
     font-size: 2.25rem;
     margin: 0vh 0vw;
@@ -43,6 +35,14 @@
 
   @media (min-width: 768px) {
     font-size: 2.88rem;
+
+    &:hover {
+      color: $button-hover;
+
+      .fa-sailboat {
+        color: $button-hover;
+      }
+    }
 
     p {
       font-size: 3rem;
