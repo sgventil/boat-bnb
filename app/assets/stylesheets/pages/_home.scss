@@ -1,45 +1,82 @@
-.main-container-index {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  grid-gap: 20px;
-}
-
-.index-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
-}
-
-.bottom-section {
-  /* Your styles for the bottom section */
+.main-index {
+display: flex;
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust as needed */
-  grid-gap: 20px;
-}
+  flex: 6.6;
+  grid-template-columns: 1fr;
+  grid-gap: 2.5vh;
+  padding: 2.5vh;
 
-.card-item {
-  /* Your card item styles */
+  @media (min-width: 576px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .map-container {
-  /* Your styles for the map container */
-}
-.btn-map {
-  position: fixed;
-  align-content: center;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 25px;
-  width: 20%;
+  flex: 3.4;
+  padding-top: 2.5vh;
+  padding-right: 2.5vh;
+  border-radius: 20vh;
 }
 
-@media screen and (max-width: 567px) {
-  .custom-column-height {
-    padding: 0 10px;
-  }
+#map {
+  border-radius: 2vh;
 }
+
+
+
+// .main-container-index {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: auto 1fr;
+//   grid-gap: 20px;
+// }
+
+// .index-container {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-gap: 20px;
+// }
+
+// .bottom-section {
+//   /* Your styles for the bottom section */
+// }
+
+// .card-grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust as needed */
+//   grid-gap: 20px;
+// }
+
+// .card-item {
+//   /* Your card item styles */
+// }
+
+// .map-container {
+//   /* Your styles for the map container */
+// }
+// .btn-map {
+//   position: fixed;
+//   align-content: center;
+//   bottom: 50px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   border-radius: 25px;
+//   width: 20%;
+// }
+
+// @media screen and (max-width: 567px) {
+//   .custom-column-height {
+//     padding: 0 10px;
+//   }
+// }

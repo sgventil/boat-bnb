@@ -1,28 +1,44 @@
-<%= render partial: "shared/topsection_banner" %>
-<div class="bottom-section">
+<%# <%= render partial: "shared/topsection_banner" %>
+<%# <div class="bottom-section"> %>
+  <%# <div class="cards">
     <% if params[:location].present? %>
-      <h1>Boats in <%= params[:location].capitalize %></h1>
-    <% end %>
-    <% if @boats.empty? %>
-      <p>Sorry, no boats match your search criteria.</p>
+      <%# <h1>Boats in <%= params[:location].capitalize %>
+    <%# <% end %>
+    <%# <% if @boats.empty? %>
+      <%# <p>Sorry, no boats match your search criteria.</p>
     <% else %>
-      <div class="card-grid">
+      <%# <div class="card-grid">
         <% @boats.each do |boat| %>
-          <div class="card-item">
-            <a href="<%= boat_path(boat) %>" class="text-decoration-none">
-              <%= render partial: "shared/boatcard", locals: { boat: boat } %>
-            </a>
-          </div>
-        <% end %>
-      </div>
+          <%# <div class="card-item"> %>
+
+              <%# <%= render partial: "shared/boatcard", locals: { boat: boat } %>
+            <%# </a> %>
+          <%# </div> %>
+        <%# <% end %>
+      <%# </div> %>
+    <%# <% end %>
+  <%# </div> %>
+  <%# <div class="map-container"> %>
+    <%# <a href="/boats/map_view" class="btn btn-dark fixed-bottom btn-map">Map</a> %>
+    <%# <% if @markers.present? %>
+    <%# <div class="d-none d-sm-block col-sm-4"> %>
+    <%# <div class="sticky-top sticky-bottom"> %>
+
+    <%# </div> %>
+    <%# <% end %>
+  <%# </div>
+</div> %>
+
+<%= render partial: "shared/topsection_banner" %>
+<main class="main-index">
+  <div class="card-grid">
+    <% @boats.each do |boat| %>
+      <%= render partial: "shared/boatcard", locals: { boat: boat } %>
     <% end %>
   </div>
   <div class="map-container">
-  <a href="/boats/map_view" class="btn btn-dark fixed-bottom btn-map">Map</a>
-  <% if @markers.present? %>
-  <%# <div class="d-none d-sm-block col-sm-4"> %>
-  <div class="sticky-top sticky-bottom">
-  <div data-controller="map" id="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>" style="width: 100%" class="vh-100"></div>
-  <%# </div> %>
-  <% end %>
-</div>
+    <div class="sticky-top sticky-bottom">
+      <div data-controller="map" id="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>" style="width: 100%" class="vh-100"></div>
+    </div>
+  </div>
+</main>

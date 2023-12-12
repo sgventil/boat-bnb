@@ -1,7 +1,9 @@
 <div class="card h-100 border-0 shadow-none w-100">
   <div class="rounded-img">
     <% if boat.photo.attached? %>
+      <a href="<%= boat_path(boat) %>" class="text-decoration-none">
         <%= cl_image_tag boat.photo.key, transformation: { width: 300, height: 250, crop: :fill }, class: "img-fluid boat-image" %>
+      </a>
     <% else %>
       <p>No photo available</p>
     <% end %>

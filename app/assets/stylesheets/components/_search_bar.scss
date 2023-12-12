@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.75vw;
+  gap: 2.5vh;
 
   .input-fields {
 
@@ -39,8 +39,6 @@
   .input-fields input{
     width: 100%;
     border: solid 1px $headers-color;
-    outline: none;
-    border-radius: 1rem;
     transition: box-shadow 200ms ease-out;
   }
 
