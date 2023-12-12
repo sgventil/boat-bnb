@@ -1,10 +1,12 @@
 .main-index {
 display: flex;
+// overflow-y: hidden;
+// overflow-x: hidden;
 }
 
 .card-grid {
   display: grid;
-  flex: 6.6;
+  flex: 0.66;
   grid-template-columns: 1fr;
   grid-gap: 2.5vh;
   padding: 2.5vh;
@@ -23,10 +25,9 @@ display: flex;
 }
 
 .map-container {
-  flex: 3.4;
+  flex: 0.34;
   padding-top: 2.5vh;
   padding-right: 2.5vh;
-  border-radius: 20vh;
 }
 
 #map {
