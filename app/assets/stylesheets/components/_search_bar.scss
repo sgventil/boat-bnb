@@ -8,8 +8,8 @@
   .input-fields {
 
     .location-input {
-      border-radius: 4vh;
-      font-size: 2.5vh;
+      border-radius: 1.25vh;
+      font-size: 2vh;
       outline: none;
     }
 
@@ -25,8 +25,8 @@
 
       .location-input,
       .date-input {
-        border-radius: 4vh;
-        font-size: 2.5vh;
+        border-radius: 1.25vh;
+        font-size: 2vh;
         outline: none;
       }
 
@@ -52,7 +52,7 @@
     color: $white;
     border: solid 0.2rem $white;
     border-radius: 2rem;
-    font-size: 2.5vh;
+    font-size: 2vh;
     font-weight: bold;
     cursor: pointer;
 

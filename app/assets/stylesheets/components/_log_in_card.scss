@@ -1,33 +1,26 @@
-.test-element {
-  font-size: 2rem; /* This should render as 20px if 1rem is 10px */
-  padding: 1rem; /* This should render as 10px if 1rem is 10px */
-  background-color: lightblue;
-  color: black;
-}
-
 .log-in-card {
   display: flex;
   flex-direction: column;
   width: 80%;
-  max-width: 500px;
+  max-width: 50rem;
   height: 66%;
-  max-height: 600px;
+  max-height: 60rem;
   color: $white;
-  font-size: 12px;
-  border: 2px solid rgba(255, 255, 255, .25);
-  border-radius: 20px;
+  font-size: 1.2rem;
+  border: 0.2rem solid rgba(255, 255, 255, .25);
+  border-radius: 2rem;
   background-color: rgba(255, 255, 255, 0.33);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(3px);
+  box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(0.3rem);
 
   .form-inputs {
-    padding: 2rem;
+    padding: 3vh;
     padding-bottom: 0;
   }
 
   .form-inputs input{
     width: 100%;
-    border: solid 1px $headers-color;
+    border: solid 0.1rem $headers-color;
     margin-bottom: 1rem;
     outline: none;
     border-radius: 0.75rem;
@@ -65,7 +58,7 @@
   }
 
   .fa-facebook-f {
-    font-size: 20px;
+    font-size: 2rem;
     align-content: center;
   }
 
@@ -80,6 +73,6 @@
   }
 
   @media (min-width: 768px) {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
