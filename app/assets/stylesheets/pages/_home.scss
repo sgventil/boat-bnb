@@ -6,13 +6,13 @@ display: flex;
 
 .card-grid {
   display: grid;
-  flex: 0.66;
   grid-template-columns: 1fr;
   grid-gap: 2.5vh;
   padding: 2.5vh;
 
   @media (min-width: 576px) {
     grid-template-columns: 1fr 1fr;
+    flex: 0.66;
   }
 
   @media (min-width: 768px) {
@@ -25,13 +25,22 @@ display: flex;
 }
 
 .map-container {
-  flex: 0.34;
+  display: none;
   padding-top: 2.5vh;
   padding-right: 2.5vh;
+
+  @media (min-width: 576px) {
+    display: block;
+    flex: 0.34;
+  }
 }
 
 #map {
   border-radius: 2vh;
+
+  // @media (min-width: 576px) {
+  //   display: block;
+  // }
 }
 
 
