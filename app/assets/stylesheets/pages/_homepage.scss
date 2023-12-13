@@ -1,0 +1,65 @@
+main {
+  background-color: $logo;
+}
+
+.main-index {
+display: flex;
+border-radius: 2vh;
+border-top: 2px solid $logo;
+border-bottom: 2px solid $logo;
+
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2.5vh;
+  padding: 2.5vh;
+  background-color: #fff;
+  border-radius: 2vh 2vh 2vh 2vh;
+  width: 100%;
+
+  @media (min-width: 576px) {
+    grid-template-columns: 1fr 1fr;
+    flex: 0.66;
+    border-radius: 2vh 0vh 0vh 2vh;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.map-container {
+  display: none;
+  padding-top: 2.5vh;
+  padding-right: 2.5vh;
+  padding-bottom: 2.5vh;
+  background-color: #fff;
+  border-radius: 0vh 2vh 2vh 0vh;
+
+  @media (min-width: 576px) {
+    display: block;
+    flex: 0.34;
+  }
+}
+
+#map {
+  border-radius: 2vh;
+}
+
+.btn-map {
+  position: fixed;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2vh;
+  width: 20%;
+}
