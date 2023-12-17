@@ -1,4 +1,52 @@
-import { Controller } from "@hotwired/stimulus"
+// import { Controller } from "@hotwired/stimulus"
+
+// export default class extends Controller {
+//   connect() {
+//     const btn = document.getElementById('btn');
+//     const cardGrid = document.getElementById('gridjs');
+//     const mapContainer = document.getElementById('mapjs');
+
+//     btn.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     const isMobilePortrait = window.innerWidth <= 575.98 && window.innerHeight > window.innerWidth;
+//       if (isMobilePortrait) {
+//         if (window.getComputedStyle(cardGrid).display !== 'none') {
+//           cardGrid.style.display = 'none';
+//           mapContainer.style.display = 'block';
+//           btn.textContent = 'Boats';
+//         } else {
+//           cardGrid.style.display = 'grid';
+//           mapContainer.style.display = 'none';
+//           btn.textContent = 'Map';
+//         }
+//       }
+//     });
+
+//     const handleResize = () => {
+//       const isMobilePortrait = window.innerWidth <= 575.98 && window.innerHeight > window.innerWidth;
+//       if (isMobilePortrait) {
+//         cardGrid.style.display = 'grid';
+//         mapContainer.style.display = 'none';
+//       } else {
+//         cardGrid.style.display = 'grid';
+//         mapContainer.style.display = 'block';
+//       }
+//     };
+
+//     window.addEventListener('resize', handleResize);
+//     handleResize();
+//   }
+// };
+
+    // window.addEventListener('resize', () => {
+    //   const isMobilePortrait = window.innerWidth <= 575 && window.innerHeight > window.innerWidth;
+    //   if (!isMobilePortrait) {
+    //     cardGrid.style.display = 'grid';
+    //     mapContainer.style.display = 'block';
+    //   }
+    // });
+
+    import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   connect() {
@@ -6,10 +54,13 @@ export default class extends Controller {
     const cardGrid = document.getElementById('gridjs');
     const mapContainer = document.getElementById('mapjs');
 
-    btn.addEventListener('click', (event) => {
-    event.preventDefault();
-    const isMobilePortrait = window.innerWidth <= 575 && window.innerHeight > window.innerWidth;
-      if (isMobilePortrait) {
+    const isMobilePortrait = () => {
+      return window.matchMedia("(orientation: portrait)").matches ||
+        (window.innerWidth < window.innerHeight && window.innerWidth <= 575);
+    };
+
+    const toggleViews = () => {
+      if (isMobilePortrait()) {
         if (window.getComputedStyle(cardGrid).display !== 'none') {
           cardGrid.style.display = 'none';
           mapContainer.style.display = 'block';
@@ -20,10 +71,15 @@ export default class extends Controller {
           btn.textContent = 'Map';
         }
       }
+    };
+
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      toggleViews();
     });
 
     const handleResize = () => {
-      const isMobilePortrait = window.innerWidth <= 575 && window.innerHeight > window.innerWidth;
+       const isMobilePortrait = window.innerWidth <= 575.98 && window.innerHeight > window.innerWidth;
       if (isMobilePortrait) {
         cardGrid.style.display = 'grid';
         mapContainer.style.display = 'none';
@@ -34,14 +90,8 @@ export default class extends Controller {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize();
+    window.addEventListener('orientationchange', handleResize);
+
+    toggleViews(); // Initial view check
   }
 };
-
-    // window.addEventListener('resize', () => {
-    //   const isMobilePortrait = window.innerWidth <= 575 && window.innerHeight > window.innerWidth;
-    //   if (!isMobilePortrait) {
-    //     cardGrid.style.display = 'grid';
-    //     mapContainer.style.display = 'block';
-    //   }
-    // });
