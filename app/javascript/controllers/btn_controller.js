@@ -308,7 +308,7 @@ export default class extends Controller {
     let isMapTouched = false; // Variable to track touch events in map
 
     const isMobilePortrait = () => {
-      return window.innerWidth <= 575.98 && window.innerHeight > window.innerWidth;
+      return window.matchMedia("(orientation: portrait)").matches;
     };
 
     const showCardGrid = () => {
