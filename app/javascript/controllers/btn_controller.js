@@ -21,5 +21,27 @@ export default class extends Controller {
         }
       }
     });
+
+    const handleResize = () => {
+      const isMobilePortrait = window.innerWidth <= 575 && window.innerHeight > window.innerWidth;
+      if (isMobilePortrait) {
+        cardGrid.style.display = 'grid';
+        mapContainer.style.display = 'none';
+      } else {
+        cardGrid.style.display = 'grid';
+        mapContainer.style.display = 'block';
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
   }
 };
+
+    // window.addEventListener('resize', () => {
+    //   const isMobilePortrait = window.innerWidth <= 575 && window.innerHeight > window.innerWidth;
+    //   if (!isMobilePortrait) {
+    //     cardGrid.style.display = 'grid';
+    //     mapContainer.style.display = 'block';
+    //   }
+    // });
