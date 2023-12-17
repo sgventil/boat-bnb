@@ -32,16 +32,16 @@
 <%= render partial: "shared/topsection_banner" %>
 <main>
   <div class="main-index">
-    <div class="card-grid">
+    <div class="card-grid" id="gridjs">
       <% @boats.each do |boat| %>
         <%= render partial: "shared/boatcard", locals: { boat: boat } %>
       <% end %>
     </div>
-    <div class="map-container">
+    <div class="map-container" id="mapjs">
       <div class="sticky-top sticky-bottom">
         <div data-controller="map" id="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>" style="width: 100%" class="vh-100"></div>
       </div>
     </div>
-    <a href="/boats/map_view" class="btn btn-dark fixed-bottom btn-map">Map</a>
+    <a href="/boats/map_view" id="btn" data-controller="btn" class="btn btn-dark fixed-bottom btn-map">Map</a>
   </div>
 </main>
