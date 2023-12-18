@@ -6,6 +6,8 @@ export default class extends Controller {
   connect() {
     const mapContainer = document.getElementById('map');
     mapContainer.innerHTML = '';
+    mapContainer.style.width = '100%';
+    mapContainer.style.height = '100vh';
     mapboxgl.accessToken = this.apiKeyValue
     const firstBoat = this.markersValue[0];
     this.map = new mapboxgl.Map({
@@ -18,6 +20,12 @@ export default class extends Controller {
     });
 
     this.#addMarkersToMap();
+    document.addEventListener('DOMContentLoaded', () => {
+      const mapCanvas = document.querySelector('.mapboxgl-canvas');
+      if (mapCanvas) {
+        mapCanvas.removeAttribute('style');
+      }
+    });
   }
 
   #addMarkersToMap() {
