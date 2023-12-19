@@ -25,6 +25,12 @@ body {
 
     h2 {
       color: $white;
+      font-size: 2rem;
     }
   }
+}
+
+.devise-links {
+  display: flex;
+  justify-content: center;
 }
