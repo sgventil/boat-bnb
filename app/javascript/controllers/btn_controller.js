@@ -20,25 +20,26 @@ export default class extends Controller {
           btn.textContent = 'Map';
         }
       });
-    }
 
 
-    // const handleResize = () => {
+
+    const handleResize = () => {
     // const isMobilePortrait = window.matchMedia("(orientation: portrait)").matches;
-    //   if (isMobilePortrait) {
-    //     cardGrid.style.display = 'grid'; // Ensure card grid is displayed on mobile resize
-    //     mapContainer.style.display = 'none'; // Hide map on mobile resize
-    //     btn.textContent = 'Map';
-    //   } else {
-    //     cardGrid.style.display = 'grid'; // Ensure card grid is displayed on mobile resize
-    //     mapContainer.style.display = 'block'; // Hide map on mobile resize
-    //     btn.textContent = 'Boats';
-    //   }
-    // };
+    const isMobilePortrait = window.matchMedia("(min-width: 576px)").matches;
+      if (isMobilePortrait) {
+          cardGrid.style.display = 'grid'; // Ensure card grid is displayed on mobile resize
+        mapContainer.style.display = 'block'; // Hide map on mobile resize
+        btn.textContent = 'Boats';
+      } else {
+      cardGrid.style.display = 'grid'; // Ensure card grid is displayed on mobile resize
+      mapContainer.style.display = 'none'; // Hide map on mobile resize
+      btn.textContent = 'Map';
+      }
+    };
 
-    // window.addEventListener('resize', handleResize);
-    // handleResize();
-
+    window.addEventListener('resize', handleResize);
+    handleResize();
+  }
 }
 
 
