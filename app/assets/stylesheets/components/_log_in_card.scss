@@ -7,7 +7,7 @@
   max-height: 60rem;
   color: $white;
   font-size: 1.2rem;
-  border: 0.2rem solid rgba(255, 255, 255, .25);
+  border: 0.1rem solid $white;
   border-radius: 2rem;
   background-color: rgba(255, 255, 255, 0.33);
   box-shadow: -0.5rem 0.5rem 2rem 0.1rem rgba(255, 255, 255, 0.33);
@@ -20,7 +20,9 @@
 
   .form-inputs input{
     width: 100%;
-    border: solid 0.1rem $headers-color;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border: solid 0.15rem $headers-color;
     margin-bottom: 1rem;
     outline: none;
     border-radius: 0.75rem;
@@ -74,5 +76,13 @@
 
   @media (min-width: 768px) {
     font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .log-in-card {
+    .form-inputs input {
+      font-size: 1.75rem;
+    }
   }
 }
