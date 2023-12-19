@@ -4,14 +4,14 @@
 
 .card-title {
   font-family: $headers-font;
-  font-size: 16px;
+  font-size: 1.5rem;
   color: $black;
   margin: 0;
 }
 
 .card-text {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px;
+  font-size: 1.2rem;
   color: $body-color;
   margin: 0;
   padding: 0;
@@ -24,7 +24,7 @@
 }
 
 .rounded-img img {
-  border-radius: 12px;
+  border-radius: 1.2rem;
 }
 
 .carousel {
@@ -48,7 +48,7 @@
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 576px) {
+@media (max-width: 576px) {
 
   .rounded-img {
     text-align: center;
