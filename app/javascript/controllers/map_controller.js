@@ -19,13 +19,37 @@ export default class extends Controller {
       minZoom: 3
     });
 
+    // if (window.matchMedia("(max-width: 575.98px) and (orientation: portrait)").matches) {
+    //   mapContainer.style.width = '100%';
+    //   mapContainer.style.height = '100vh';
+    // }
+
+    // const resizeMap = () => {
+    //   // Resize the map container when the window is resized
+    //   if (window.matchMedia("(max-width: 575.98px) and (orientation: portrait)").matches) {
+    //     mapContainer.style.width = '100%';
+    //     mapContainer.style.height = '100vh';
+    //   }
+    // };
+
+    // // Initialize the map when the DOM content is loaded
+    // document.addEventListener('DOMContentLoaded', initializeMap);
+
+    // // Call the resizeMap function whenever the window is resized
+    // window.addEventListener('resize', resizeMap);
+
+
+
+  // function resizeCanvas() {
+  //   canvas.width = window.innerWidth;
+  //   canvas.height = window.innerHeight;
+  //   // Your drawing/rendering code here...
+  // }
+
+  // // Initial resize and listen for window resize events
+  // window.addEventListener('resize', resizeCanvas);
+  // resizeCanvas();
     this.#addMarkersToMap();
-    document.addEventListener('DOMContentLoaded', () => {
-      const mapCanvas = document.querySelector('.mapboxgl-canvas');
-      if (mapCanvas) {
-        mapCanvas.removeAttribute('style');
-      }
-    });
   }
 
   #addMarkersToMap() {
@@ -55,6 +79,8 @@ export default class extends Controller {
         }
     });
   }
+
+
 
   // #fitMapToMarkers() {
   //   const bounds = new mapboxgl.LngLatBounds()

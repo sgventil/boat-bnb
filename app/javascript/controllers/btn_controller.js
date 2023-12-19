@@ -7,11 +7,9 @@ export default class extends Controller {
     const mapContainer = document.getElementById('mapjs');
 
     btn.addEventListener('click', (event) => {
-      event.preventDefault();
-      const isMobilePortrait = () => {
-              return window.matchMedia("(orientation: portrait)").matches;
-            };
-      if (isMobilePortrait()) {
+      // event.preventDefault();
+      // const isMobilePortrait = window.matchMedia("(orientation: portrait)").matches;
+      // if (isMobilePortrait) {
         if (window.getComputedStyle(cardGrid).display !== 'none') {
           cardGrid.style.display = 'none';
           mapContainer.style.display = 'block';
@@ -21,27 +19,29 @@ export default class extends Controller {
           mapContainer.style.display = 'none';
           btn.textContent = 'Map';
         }
-      }
-    });
+      });
+    }
 
-    const handleResize = () => {
-      const isMobilePortrait = () => {
-        return window.matchMedia("(orientation: portrait)").matches;
-      };
-        if (isMobilePortrait()) {
-          cardGrid.style.display = 'grid';
-          mapContainer.style.display = 'none';
-          btn.textContent = 'Map';
-        } else {
-          cardGrid.style.display = 'grid';
-          mapContainer.style.display = 'block';
-        }
-      };
 
-      window.addEventListener('resize', handleResize);
-      handleResize();
-  }
-};
+    // const handleResize = () => {
+    // const isMobilePortrait = window.matchMedia("(orientation: portrait)").matches;
+    //   if (isMobilePortrait) {
+    //     cardGrid.style.display = 'grid'; // Ensure card grid is displayed on mobile resize
+    //     mapContainer.style.display = 'none'; // Hide map on mobile resize
+    //     btn.textContent = 'Map';
+    //   } else {
+    //     cardGrid.style.display = 'grid'; // Ensure card grid is displayed on mobile resize
+    //     mapContainer.style.display = 'block'; // Hide map on mobile resize
+    //     btn.textContent = 'Boats';
+    //   }
+    // };
+
+    // window.addEventListener('resize', handleResize);
+    // handleResize();
+
+}
+
+
 
     // window.addEventListener('resize', () => {
     //   const isMobilePortrait = window.innerWidth <= 575 && window.innerHeight > window.innerWidth;
