@@ -48,8 +48,10 @@ border: 2px solid $logo;
   @media (min-width: 576px) {
     display: block;
     border-radius: 0vh 2vh 2vh 0vh;
+    padding-left: 0vh;
     flex: 0.34;
   }
+
 }
 
 #map {
