@@ -21,13 +21,13 @@ export default class extends Controller {
 
     const handleResize = () => {
       const isLargerThan575px = window.matchMedia("(min-width: 576px)").matches;
-      if (isLargerThan575px) {
+      const landscape = window.matchMedia("(orientation: landscape)").matches;
+      if (isLargerThan575px || landscape) {
         cardGrid.style.display = 'grid';
         mapContainer.style.display = 'block';
       } else if (window.getComputedStyle(cardGrid).display === 'none') {
         cardGrid.style.display = 'none';
-        mapContainer.style.display = 'block';
-        mapContainer.style.width = '100%';
+        mapContainer.style.display = 'block' && mapContainer.style.width === '100%';
       } else {
       cardGrid.style.display = 'grid';
       mapContainer.style.display = 'none';
