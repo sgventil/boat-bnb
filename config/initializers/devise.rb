@@ -21,7 +21,7 @@ Devise.setup do |config|
     callback_url = 'http://localhost:3000/users/auth/facebook/callback'
   end
 
-  config.omniauth :facebook, '235846058946077', '81f02f2dc56db9221d6c89da4ace075a', scope: 'email', info_fields: 'email,name', callback_url: callback_url
+  config.omniauth :facebook, '348066591185534', '28c8c87d616bba0aff899b9413f6f0c3', scope: 'email', info_fields: 'email,name', callback_url: callback_url
   config.omniauth_path_prefix = "/users/auth"
   config.clean_up_csrf_token_on_authentication = true
   # ==> Controller configuration
