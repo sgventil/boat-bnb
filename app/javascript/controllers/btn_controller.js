@@ -35,7 +35,6 @@ export default class extends Controller {
     }
     window.addEventListener('resize', handleResize);
     window.addEventListener('orientationchange', handleResize);
-    handleResize();
-
+    handleResize()
   }
 }

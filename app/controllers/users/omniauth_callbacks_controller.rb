@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
-class Users::OmniauthCallbacks::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_action :verify_authenticity_token, only: [:facebook]
 
   def facebook
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
-      sign_in_and_redirect @user, event: :authentication, :event => :authentication, :location => "https://boatbnb-623630f4ace7.herokuapp.com/users/auth/facebook/callback"
+      # callback_url = "#{request.protocol}#{request.host_with_port}/users/auth/facebook/callback"
+      sign_in_and_redirect @user, event: :authentication, :event => :authentication, :location => 'https://boatbnb-623630f4ace7.herokuapp.com/users/auth/facebook/callback'
       set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]

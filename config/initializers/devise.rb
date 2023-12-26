@@ -8,6 +8,12 @@
 #
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+# Devise.setup do |config|
+#   config.omniauth :facebook, '348066591185534', '28c8c87d616bba0aff899b9413f6f0c3', scope: 'email', info_fields: 'email,name'
+#   config.omniauth_path_prefix = '/users/auth'
+#   config.clean_up_csrf_token_on_authentication = true
+
+
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
@@ -18,7 +24,7 @@ Devise.setup do |config|
   if Rails.env.production?
     callback_url = 'https://boatbnb-623630f4ace7.herokuapp.com/users/auth/facebook/callback'
   else
-    callback_url = 'http://localhost:3000/users/auth/facebook/callback'
+    callback_url = 'https://51d5-194-230-158-159.ngrok-free.app/users/auth/facebook/callback'
   end
 
   config.omniauth :facebook, '348066591185534', '28c8c87d616bba0aff899b9413f6f0c3', scope: 'email', info_fields: 'email,name', callback_url: callback_url

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: "boats#index"
   devise_for :users, controllers: {
-     sessions: 'users/omniauth_callbacks/sessions',
-     omniauth_callbacks: 'users/omniauth_callbacks/omniauth_callbacks'
+     sessions: 'users/sessions',
+     omniauth_callbacks: 'users/omniauth_callbacks'
    }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
