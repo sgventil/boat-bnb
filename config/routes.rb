@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
+  devise_scope :user do
+    get '/users/auth/google_oauth2/callback', to: 'users/omniauth_callbacks#google_oauth2', as: 'user_google_oauth2_omniauth_callback'
+  end
 
   get 'boats/map_view', to: 'boats#map_view', as: 'boats_map_view'
 

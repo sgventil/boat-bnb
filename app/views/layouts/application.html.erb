@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>BoatBnb</title>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,38 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId: '348066591185534',
-          xfbml: true,
-          version: 'v18.0'
-        });
-        FB.AppEvents.logPageView();
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) { return; }
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-
-      function statusChangeCallback(response) {
-        if (response.status === 'connected') {
-          var accessToken = response.authResponse.accessToken;
-        } else {
-
-        }
-      }
-
-      function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-          statusChangeCallback(response);
-        });
-      }
-    </script>
   </head>
   <body>
     <%= render partial: 'shared/navbar' %>

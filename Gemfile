@@ -8,6 +8,8 @@ gem "pundit"
 
 gem 'omniauth-facebook'
 
+gem 'omniauth-google-oauth2'
+
 gem 'omniauth-rails_csrf_protection'
 gem 'mapbox-gl-rails'
 gem 'geocoder'

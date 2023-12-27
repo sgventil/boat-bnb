@@ -13,5 +13,5 @@ application.register("hello", BtnController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
-import FacebookController from "./facebook_controller"
-application.register("facebook", FacebookController)
+// import FacebookController from "./facebook_controller"
+// application.register("facebook", FacebookController)
