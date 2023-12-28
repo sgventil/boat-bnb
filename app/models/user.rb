@@ -11,8 +11,6 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     return unless auth.present? && auth.info.present?
 
-    user = User.from_omniauth(auth)
-
     user = where(email: auth.info.email).first_or_initialize do |new_user|
       new_user.email = auth.info.email
       new_user.password = Devise.friendly_token[0, 20]

@@ -15,21 +15,19 @@
 
 
 Devise.setup do |config|
+  config.omniauth :google_oauth2, '855151387406-rcltjaleu6tkj1or5k6fr271ljo3vjkl.apps.googleusercontent.com', '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', {
+      scope: 'email',
+      prompt: 'select_account',
+      image_aspect_ratio: 'square',
+      image_size: 50,
+      redirect_uri: Rails.env.production? ? 'https://boatbnb-623630f4ace7.herokuapp.com/users/auth/google_oauth2/callback' : 'https://96a4-194-230-158-149.ngrok-free.app/users/auth/google_oauth2/callback'
+    }
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = '7f2a251b225b4cab8e467b99ba32386f05e572269037a092df0bf9a935470a39d61344cb7838f00fccbd55f16625938693e2dd0138580217c281cbe26ce874c1'
-  if Rails.env.production?
-    callback_url = 'https://boatbnb-623630f4ace7.herokuapp.com/users/auth/facebook/callback'
-  else
-    callback_url = 'https://51d5-194-230-158-159.ngrok-free.app/users/auth/facebook/callback'
-  end
-
-  config.omniauth :facebook, '348066591185534', '28c8c87d616bba0aff899b9413f6f0c3', scope: 'email', info_fields: 'email,name', callback_url: callback_url
-  config.omniauth_path_prefix = "/users/auth"
-  config.clean_up_csrf_token_on_authentication = true
+  # config.secret_key = '7f2a251b225b4cab8e467b99ba32386f05e572269037a092df0bf9a935470a39d61344cb7838f00fccbd55f16625938693e2dd0138580217c281cbe26ce874c1'
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
